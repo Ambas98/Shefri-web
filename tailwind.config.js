@@ -11,6 +11,12 @@ module.exports = {
         // Estos colores se sobrescriben dinámicamente desde client-config
         primary: '#2563EB',
         secondary: '#10B981',
+        gold: '#C9A84C',
+        deep: '#0a0a0a',
+      },
+      fontFamily: {
+        cormorant: ['var(--font-cormorant)', 'serif'],
+        poppins: ['var(--font-poppins)', 'sans-serif'],
       },
     },
   },

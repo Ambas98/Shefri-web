@@ -11,99 +11,131 @@ export const siteConfig = {
   // ==========================================
   // 1. INFORMACIÓN BÁSICA
   // ==========================================
-  businessName: "Mi Negocio",
-  tagline: "Slogan o frase descriptiva",
-  description: "Descripción breve del negocio para SEO (150-160 caracteres)",
+  businessName: "Shefri",
+  tagline: "Sabor Napolitano",
+  description: "Pizzería napolitana artesanal en San Juan. Pizzas, calzones y pizza dogs cocinados a 400° listos en 5 minutos. Arte, amor y pasión en cada porción.",
 
   // ==========================================
   // 2. HISTORIA / SOBRE NOSOTROS
   // ==========================================
   about: {
-    story: "Contá la historia de tu negocio acá. ¿Cuándo abriste? ¿Qué te inspiró? ¿Qué valores te guían? Este texto aparece en la sección 'Sobre Nosotros' y ayuda a conectar con tus clientes.",
-    mission: "Nuestra misión es brindar el mejor servicio posible con calidad y dedicación."  // Opcional - dejá "" si no querés usarlo
+    story: "Shefri es una pizzería estilo napolitano, atendida por su propio dueño. Trabajamos a 400°, lo que nos permite tener nuestros productos listos en 5 minutos. Acercate por el local y descubrí el verdadero sabor napolitano.",
+    mission: "Arte, amor y pasión en cada porción."
   },
 
   // ==========================================
   // 3. CONTACTO
   // ==========================================
   contact: {
-    phone: "+54 264 123-4567",
-    whatsapp: "5492641234567",  // Solo números, sin espacios ni guiones
-    email: "contacto@minegocio.com",
-    address: "Calle Ejemplo 123, San Juan, Argentina"
+    phone: "+54 9 264 514-1313",
+    whatsapp: "5492645141313",
+    email: "",
+    address: "Manuel Zavalla 850 Norte, Ayres Village, Rivadavia, San Juan"
   },
 
   // ==========================================
   // 4. MENSAJE DE WHATSAPP
   // ==========================================
-  // Mensaje pre-cargado cuando el cliente hace click en WhatsApp
-  whatsappMessage: "Hola! Me interesa consultar sobre sus servicios.",
+  whatsappMessage: "Hola Shefri! Quiero hacer un pedido.",
 
   // ==========================================
   // 5. REDES SOCIALES (opcional - dejar "" si no tiene)
   // ==========================================
   social: {
-    facebook: "https://facebook.com/minegocio",
-    instagram: "https://instagram.com/minegocio",
-    twitter: "",   // Opcional
-    linkedin: ""   // Opcional
+    facebook: "",
+    instagram: "https://www.instagram.com/shefrisabornapolitano/",
+    twitter: "",
+    linkedin: ""
   },
 
   // ==========================================
   // 6. UBICACIÓN Y MAPA
   // ==========================================
   location: {
-    // Coordenadas GPS (buscar en Google Maps)
-    lat: -31.5375,
-    lng: -68.5364,
-    // Link directo de Google Maps (botón "Compartir" en Google Maps)
-    mapUrl: "https://goo.gl/maps/ejemplo"
+    lat: -31.5199,
+    lng: -68.5796,
+    mapUrl: "https://www.google.com/maps/search/Manuel%20Zavalla%20Nte.%20850%20Rivadavia/@-31.5199,-68.5796,17z"
   },
 
   // ==========================================
   // 7. HORARIOS DE ATENCIÓN
   // ==========================================
   hours: {
-    monday: "09:00 - 18:00",
-    tuesday: "09:00 - 18:00",
-    wednesday: "09:00 - 18:00",
-    thursday: "09:00 - 18:00",
-    friday: "09:00 - 18:00",
-    saturday: "09:00 - 13:00",
-    sunday: "Cerrado"
+    monday: "Cerrado",
+    tuesday: "21:00 - 00:00",
+    wednesday: "21:00 - 00:00",
+    thursday: "21:00 - 00:00",
+    friday: "21:00 - 00:00",
+    saturday: "21:00 - 00:00",
+    sunday: "21:00 - 00:00"
   },
 
   // ==========================================
-  // 8. MENÚ / CATÁLOGO / SERVICIOS
+  // 8. MENÚ
   // ==========================================
-  // menuLabel: nombre de esta sección en el sitio
-  // Opciones: "Menú", "Servicios", "Catálogo", "Productos", "Tratamientos"
   menuLabel: "Menú",
 
   catalog: [
     {
-      category: "Categoría 1",  // Ej: "Entradas", "Cortes de pelo", "Masajes"
+      category: "Pizzas",
       items: [
-        {
-          name: "Producto/Servicio 1",
-          price: "5000",   // Solo números, sin $ ni puntos
-          description: "Descripción opcional del item"
-        },
-        {
-          name: "Producto/Servicio 2",
-          price: "8000",
-          description: "Otra descripción"
-        }
+        { name: "Margarita", price: "13000", description: "Salsa pomodoro, mozzarella y hojas de albahaca fresca. 8 porc. $13.000 | 4 porc. $8.000", image: "Margarita-1.webp" },
+        { name: "Triple Fugaza", price: "14000", description: "Salsa pomodoro, mozzarella, cebolla blanca, morada y de verdeo. 8 porc. $14.000 | 4 porc. $9.000", image: "fugazza-1.webp" },
+        { name: "Roquefort", price: "16000", description: "Salsa pomodoro, mozzarella y roquefort. Opcional: Nuez. 8 porc. $16.000 | 4 porc. $10.000", image: "roquefort-1.webp" },
+        { name: "Americana", price: "18000", description: "Salsa pomodoro, mozzarella, panceta ahumada y huevos fritos. 8 porc. $18.000 | 4 porc. $10.500", image: "americana-1.webp" },
+        { name: "Napolitana", price: "15000", description: "Salsa pomodoro, mozzarella, tomates cherry confitados y pesto de albahaca y nueces. 8 porc. $15.000 | 4 porc. $10.000", image: "napolitana.webp" },
+        { name: "Peperoni", price: "18000", description: "Salsa pomodoro, mozzarella, peperoni y reggianito. 8 porc. $18.000 | 4 porc. $10.000", image: "peperoni-1.webp" },
+        { name: "Cuatro Quesos", price: "15000", description: "Salsa pomodoro, mozzarella, provolone, roquefort y reggianito. 8 porc. $15.000 | 4 porc. $10.000", image: "4quesos-1.webp" },
+        { name: "Súper Provolone", price: "16000", description: "Salsa pomodoro, mozzarella y extra provolone. 8 porc. $16.000 | 4 porc. $10.500", image: "provolone-1.webp" },
+        { name: "Serrana", price: "23000", description: "Salsa pomodoro, mozzarella, jamón crudo, rúcula y reggianito. 8 porc. $23.000 | 4 porc. $14.000", image: "serrana-1.webp" },
+        { name: "Rústica", price: "19500", description: "Crema de leche, mozzarella, panceta crocante, rodajas de papa al romero con ají molido y reggianito. 8 porc. $19.500 | 4 porc. $11.500", image: "rustica.webp" },
+        { name: "Pistachela", price: "20500", description: "Base de pesto de albahaca y nuez, mozzarella, pistachos y mortadela bologna. 8 porc. $20.500 | 4 porc. $12.500", image: "Pistachella-1.webp" },
+        { name: "Especial", price: "16000", description: "Salsa pomodoro, mozzarella, jamón cocido y morrón. 8 porc. $16.000 | 4 porc. $9.000", image: "especial-1.webp" }
       ]
     },
     {
-      category: "Categoría 2",
+      category: "Nuevas Variedades",
       items: [
-        {
-          name: "Producto/Servicio 3",
-          price: "12000",
-          description: "Descripción"
-        }
+        { name: "Argenta", price: "17500", description: "Salsa pomodoro, mozzarella, chorizo, pimientos asados y aceitunas. 8 porc. $17.500 | 4 porc. $10.000", image: "argenta.webp" },
+        { name: "Roqueberry", price: "19000", description: "Crema de leche, mozzarella, roquefort y arándanos. 8 porc. $19.000 | 4 porc. $11.500", image: "roqueberry.webp" },
+        { name: "Quattro Formaggi", price: "17000", description: "Crema de leche, albahaca fresca, mozzarella, provolone, sardo y roquefort. 8 porc. $17.000 | 4 porc. $11.000", image: "4_formaggi.webp" },
+        { name: "Nuova Napolitana", price: "15000", description: "Pesto de albahaca y nueces, mozzarella y tomates cherry confitados. 8 porc. $15.000 | 4 porc. $10.000", image: "nueva_napo.webp" }
+      ]
+    },
+    {
+      category: "Pizza Dogs",
+      items: [
+        { name: "Criolla", price: "12000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, salsa criolla, mayo de ajo y aceite de oliva. Envuelta en masa de pizza.", image: "criollo.webp" },
+        { name: "Margarita", price: "12000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, reggianito, pesto de albahaca y nueces, albahaca fresca y aceite de oliva. Envuelta en masa de pizza.", image: "panchito_margarita.webp" },
+        { name: "Cheddar", price: "13000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, cheddar, panceta crocante y verdeo. Envuelta en masa de pizza.", image: "cheddar_rotated.webp" },
+        { name: "Guacamole", price: "13000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella y palta. Envuelta en masa de pizza.", image: "pancho_guacamole .webp" }
+      ]
+    },
+    {
+      category: "Calzones",
+      items: [
+        { name: "Calzón Napolitano", price: "11000", description: "Muzarella, jamón cocido, morrones y albahaca fresca.", image: "calzon-napolitano-1.webp" },
+        { name: "Calzón Fugazza", price: "13000", description: "Muzarella, jamón cocido, provolone, cebolla blanca, morada y de verdeo.", image: "calzon_fugaza.webp" }
+      ]
+    },
+    {
+      category: "Panuozzos",
+      items: [
+        { name: "Pulled Pork Clásico", price: "16000", description: "Base de masa de pizza napolitana + bondiola desmechada, mozzarella, tomate, lechuga, cebolla morada y lactonesa de ajo.", image: "pork_clasico.webp" },
+        { name: "Pulled Pork Coleslaw", price: "16000", description: "Base de masa de pizza napolitana + bondiola desmechada, mozzarella y ensalada coleslaw.", image: "pork_coleslaw.webp" },
+        { name: "Pulled Pork Honey", price: "16000", description: "Base de masa de pizza napolitana + bondiola desmechada, mozzarella, sardo, mostaza y miel.", image: "pork_honey.webp" }
+      ]
+    },
+    {
+      category: "Bebidas",
+      items: [
+        { name: "CocaCola / Sprite", price: "3000", description: "Botella 500cc." },
+        { name: "Fanta / Schweppes", price: "3000", description: "Botella 500cc." },
+        { name: "Aquarius", price: "3000", description: "Botella 300cc." },
+        { name: "Agua sin gas / con gas", price: "2000", description: "Botella 500cc." },
+        { name: "Cerveza Andes Origen", price: "4000", description: "Lata 500cc." },
+        { name: "Cerveza Budweiser", price: "4000", description: "Lata 500cc." },
+        { name: "Cerveza Donata", price: "5500", description: "IPA / PAMPEANA / IRISH / SCOTCH. Lata 500cc." }
       ]
     }
   ],
@@ -115,12 +147,15 @@ export const siteConfig = {
   // Ejemplo: Si tienes /public/images/local-1.jpg, solo pon "local-1.jpg"
   // Podés agregar también un alt text descriptivo para SEO/accesibilidad:
   gallery: [
-    { file: "imagen-1.jpg", alt: "Interior del local" },
-    { file: "imagen-2.jpg", alt: "Nuestros productos" },
-    { file: "imagen-3.jpg", alt: "El equipo de trabajo" },
-    { file: "imagen-4.jpg", alt: "Vista del local" },
-    { file: "imagen-5.jpg", alt: "Detalle de nuestros servicios" },
-    { file: "imagen-6.jpg", alt: "Ambiente del lugar" }
+    { file: "criollo.webp", alt: "Pizza dog Criolla" },
+    { file: "criollo_2.webp", alt: "Pizza dog Criolla detalle" },
+    { file: "criollozoom.webp", alt: "Pizza dog Criolla zoom" },
+    { file: "calzon_fugaza.webp", alt: "Calzón Fugazza" },
+    { file: "calzon_fugaza_2.webp", alt: "Calzón Fugazza detalle" },
+    { file: "cheddar_rotated.webp", alt: "Pizza dog Cheddar" },
+    { file: "cheddar_2_rotated.webp", alt: "Pizza dog Cheddar detalle" },
+    { file: "dolce.jpg", alt: "Pizza Shefri" },
+    { file: "ciollo2.webp", alt: "Pizza dog Criolla variante" }
   ],
 
   // ==========================================
@@ -129,7 +164,7 @@ export const siteConfig = {
   // Imagen de fondo para la pantalla de inicio.
   // Dejá "" para usar el fondo degradado por defecto.
   // Tamaño recomendado: 1920x1080px, formato JPG/WEBP.
-  heroImage: "",  // Ejemplo: "/images/hero-bg.jpg"
+  heroImage: "",  // TODO: elegir foto hero de /public/images/
 
   // ==========================================
   // 11. TEMA DE COLORES
@@ -137,11 +172,11 @@ export const siteConfig = {
   // Usá https://coolors.co para elegir paleta
   // Formato: código hexadecimal (#RRGGBB)
   colors: {
-    primary: "#2563EB",      // Color principal (botones, links, encabezados)
-    secondary: "#10B981",    // Color secundario (acentos, categorías)
-    background: "#FFFFFF",   // Fondo general
-    text: "#1F2937",         // Color del texto principal
-    textLight: "#6B7280"     // Color del texto secundario
+    primary: "#C9A84C",      // Color principal (gold — botones, links, encabezados)
+    secondary: "#A0262A",    // Color secundario (crimson — acentos, hover)
+    background: "#0a0a0a",   // Fondo general (deep dark)
+    text: "#F0EEE6",         // Color del texto principal (off-white)
+    textLight: "#9A9A8A"     // Color del texto secundario (muted)
   },
 
   // ==========================================
@@ -153,14 +188,14 @@ export const siteConfig = {
   // ==========================================
   // 13. TIPO DE NEGOCIO (para Schema.org)
   // ==========================================
-  cuisine: "Cocina Argentina",  // Tipo de cocina o categoría del negocio — reemplazar con el real
-  priceRange: "$$",             // Rango de precios: $ (económico), $$ (moderado), $$$ (caro)
+  cuisine: "Pizza Napolitana",
+  priceRange: "$$",
 
   // ==========================================
   // 14. SEO (para mejor posicionamiento en Google)
   // ==========================================
   seo: {
-    keywords: "restaurante, comida, san juan, argentina",  // Palabras clave separadas por coma
+    keywords: "pizzería napolitana, pizza, calzones, pizza dog, panuozzi, San Juan, Argentina, Shefri",
     ogImage: "/images/og-image.jpg"  // Imagen para compartir en redes (1200x630px recomendado)
   }
 }

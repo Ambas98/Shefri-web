@@ -27,17 +27,17 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white py-14">
+    <footer className="bg-[#060606] text-white py-14">
       <div className="container mx-auto px-4">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
 
           {/* Info del negocio */}
           <div>
-            <h3 className="text-xl font-bold mb-3" style={{ color: siteConfig.colors.secondary }}>
+            <h3 className="text-xl font-bold mb-3" style={{ color: siteConfig.colors.primary }}>
               {siteConfig.businessName}
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-3">{siteConfig.tagline}</p>
-            <div className="flex items-start gap-2 text-gray-400 text-sm">
+            <p className="text-[#9A9A8A] text-sm leading-relaxed mb-3">{siteConfig.tagline}</p>
+            <div className="flex items-start gap-2 text-[#9A9A8A] text-sm">
               <FaMapMarkerAlt className="mt-0.5 shrink-0" aria-hidden="true" />
               <span>{siteConfig.contact.address}</span>
             </div>
@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href={`tel:${siteConfig.contact.phone}`}
-                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+                className="flex items-center gap-2 text-[#9A9A8A] hover:text-white transition-colors text-sm"
               >
                 <FaPhone aria-hidden="true" />
                 {siteConfig.contact.phone}
@@ -58,14 +58,14 @@ export default function Footer() {
                 href={`https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+                className="flex items-center gap-2 text-[#9A9A8A] hover:text-white transition-colors text-sm"
               >
                 <FaWhatsapp aria-hidden="true" />
                 WhatsApp
               </a>
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm break-all"
+                className="flex items-center gap-2 text-[#9A9A8A] hover:text-white transition-colors text-sm break-all"
               >
                 <FaEnvelope aria-hidden="true" />
                 {siteConfig.contact.email}
@@ -84,8 +84,8 @@ export default function Footer() {
                 const isClosed = hours === 'Cerrado'
                 return (
                   <div key={day} className="flex justify-between text-xs gap-3">
-                    <dt className="text-gray-500">{daysShort[day]}</dt>
-                    <dd className={isClosed ? 'text-red-400' : 'text-gray-300'}>{hours}</dd>
+                    <dt className="text-[#5a5a5a]">{daysShort[day]}</dt>
+                    <dd style={{ color: isClosed ? siteConfig.colors.secondary : '#9A9A8A' }}>{hours}</dd>
                   </div>
                 )
               })}
@@ -106,7 +106,7 @@ export default function Footer() {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition-colors"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a1a1a] text-[#9A9A8A] hover:bg-[#2a2a2a] hover:text-white transition-colors"
                     aria-label={`Seguinos en ${platform}`}
                   >
                     <Icon className="text-lg" />
@@ -117,7 +117,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+        <div className="border-t border-[#1a1a1a] pt-8 text-center text-[#5a5a5a] text-sm">
           <p>© {currentYear} {siteConfig.businessName}. Todos los derechos reservados.</p>
         </div>
       </div>

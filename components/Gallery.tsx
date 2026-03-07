@@ -51,7 +51,7 @@ export default function Gallery() {
   const selectedImage = selectedIdx !== null ? images[selectedIdx] : null
 
   return (
-    <section className="py-20 bg-white" aria-labelledby="gallery-heading">
+    <section className="py-20 bg-[#0a0a0a]" aria-labelledby="gallery-heading">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-12"
@@ -60,16 +60,18 @@ export default function Gallery() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
+          <p className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.25em] mb-3"
+             style={{ color: siteConfig.colors.primary }}>
+            <span className="flex-1 max-w-[60px] h-px opacity-30" style={{ backgroundColor: siteConfig.colors.primary }} />
+            Nuestro espacio
+            <span className="flex-1 max-w-[60px] h-px opacity-30" style={{ backgroundColor: siteConfig.colors.primary }} />
+          </p>
           <h2
             id="gallery-heading"
-            className="text-4xl font-bold mb-3"
-            style={{ color: siteConfig.colors.primary }}
+            className="font-cormorant text-4xl md:text-5xl font-light text-[#F0EEE6]"
           >
             Galería
           </h2>
-          <p style={{ color: siteConfig.colors.textLight }}>
-            Conocé nuestro local y productos
-          </p>
         </motion.div>
 
         <motion.div
@@ -97,8 +99,16 @@ export default function Gallery() {
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300 flex items-center justify-center">
-                <span className="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 px-3 py-1 rounded-full">
+              <div
+                className="absolute inset-0 transition-colors duration-300 flex items-center justify-center"
+                style={{ backgroundColor: 'transparent' }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = `${siteConfig.colors.primary}33`)}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+              >
+                <span
+                  className="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-3 py-1 border"
+                  style={{ color: siteConfig.colors.primary, borderColor: siteConfig.colors.primary }}
+                >
                   Ver foto
                 </span>
               </div>

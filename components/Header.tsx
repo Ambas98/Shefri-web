@@ -33,8 +33,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 bg-white z-50 transition-shadow duration-300 ${
-        isScrolled ? 'shadow-md' : 'shadow-sm'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-[#0a0a0a]/95 backdrop-blur-sm shadow-lg shadow-black/20'
+          : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-4 py-4" aria-label="Navegación principal">
@@ -42,8 +44,7 @@ export default function Header() {
           {/* Logo / Nombre del negocio */}
           <Link
             href="/"
-            className="text-2xl font-bold transition-opacity hover:opacity-80"
-            style={{ color: siteConfig.colors.primary }}
+            className="text-2xl font-bold text-white transition-opacity hover:opacity-80"
           >
             {siteConfig.businessName}
           </Link>
@@ -54,17 +55,23 @@ export default function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="relative py-1 text-sm font-medium transition-opacity hover:opacity-70"
+                  className="relative py-1 text-sm font-medium transition-colors"
                   style={{
-                    color: isActive(item.href) ? siteConfig.colors.primary : siteConfig.colors.text,
+                    color: isActive(item.href) ? siteConfig.colors.primary : '#9ca3af',
                   }}
                   aria-current={isActive(item.href) ? 'page' : undefined}
+                  onMouseEnter={(e) => {
+                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = '#ffffff'
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = '#9ca3af'
+                  }}
                 >
                   {item.label}
                   {isActive(item.href) && (
                     <motion.span
                       layoutId="nav-underline"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-0.5"
                       style={{ backgroundColor: siteConfig.colors.primary }}
                     />
                   )}
@@ -75,15 +82,15 @@ export default function Header() {
 
           {/* Botón mobile */}
           <button
-            className="md:hidden p-2 rounded-md transition-colors hover:bg-gray-100"
+            className="md:hidden p-2 rounded-md transition-colors hover:bg-white/10"
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
-              <FaTimes className="text-xl" style={{ color: siteConfig.colors.text }} />
+              <FaTimes className="text-xl text-white" />
             ) : (
-              <FaBars className="text-xl" style={{ color: siteConfig.colors.text }} />
+              <FaBars className="text-xl text-white" />
             )}
           </button>
         </div>
@@ -97,18 +104,16 @@ export default function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: 'easeInOut' }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-[#0a0a0a]"
             >
-              <div className="pt-4 pb-2 space-y-1 border-t border-gray-100 mt-3">
+              <div className="pt-4 pb-2 space-y-1 border-t border-white/10 mt-3">
                 {menuItems.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={`block px-3 py-3 rounded-lg text-sm font-medium transition-colors ${
-                        isActive(item.href) ? 'bg-gray-50' : 'hover:bg-gray-50'
-                      }`}
+                      className="block px-3 py-3 rounded-lg text-sm font-medium transition-colors hover:bg-white/5"
                       style={{
-                        color: isActive(item.href) ? siteConfig.colors.primary : siteConfig.colors.text,
+                        color: isActive(item.href) ? siteConfig.colors.primary : '#ffffff',
                       }}
                       aria-current={isActive(item.href) ? 'page' : undefined}
                     >

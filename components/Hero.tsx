@@ -23,22 +23,17 @@ export default function Hero() {
 
   const sectionStyle = hasHeroImage
     ? {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(${siteConfig.heroImage})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(${siteConfig.heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }
-    : undefined
-
-  const headingColor = hasHeroImage ? '#ffffff' : siteConfig.colors.primary
-  const taglineColor = hasHeroImage ? '#e5e7eb' : siteConfig.colors.secondary
-  const descColor   = hasHeroImage ? '#d1d5db' : siteConfig.colors.text
-  const ctaLinkColor = hasHeroImage ? '#ffffff' : siteConfig.colors.textLight
+    : {
+        background: `radial-gradient(ellipse at center, ${siteConfig.colors.primary}12 0%, transparent 70%), #0a0a0a`,
+      }
 
   return (
     <section
-      className={`min-h-screen flex items-center justify-center pt-20 ${
-        hasHeroImage ? '' : 'bg-gradient-to-br from-gray-50 to-gray-100'
-      }`}
+      className="min-h-screen flex items-center justify-center pt-20"
       style={sectionStyle}
     >
       <motion.div
@@ -47,25 +42,27 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
+        {/* Tagline decorativo estilo CosmicJS */}
+        <motion.p
+          className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.3em] mb-6"
+          style={{ color: siteConfig.colors.primary }}
+          variants={itemVariants}
+        >
+          <span className="flex-1 max-w-[80px] h-px opacity-40" style={{ backgroundColor: siteConfig.colors.primary }} />
+          {siteConfig.tagline}
+          <span className="flex-1 max-w-[80px] h-px opacity-40" style={{ backgroundColor: siteConfig.colors.primary }} />
+        </motion.p>
+
         <motion.h1
-          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-          style={{ color: headingColor }}
+          className="font-cormorant text-6xl md:text-7xl lg:text-8xl font-light tracking-wide mb-8 leading-tight text-[#F0EEE6]"
           variants={itemVariants}
         >
           {siteConfig.businessName}
         </motion.h1>
 
         <motion.p
-          className="text-2xl md:text-3xl mb-8 font-medium"
-          style={{ color: taglineColor }}
-          variants={itemVariants}
-        >
-          {siteConfig.tagline}
-        </motion.p>
-
-        <motion.p
-          className="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed"
-          style={{ color: descColor }}
+          className="text-base md:text-lg mb-14 max-w-2xl mx-auto leading-relaxed"
+          style={{ color: '#9A9A8A' }}
           variants={itemVariants}
         >
           {siteConfig.description}
@@ -77,8 +74,11 @@ export default function Hero() {
         >
           <a
             href={`tel:${siteConfig.contact.phone}`}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white transition-all hover:opacity-90 active:scale-95 shadow-md"
-            style={{ backgroundColor: siteConfig.colors.primary }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 border font-medium text-sm uppercase tracking-widest transition-all hover:opacity-80 active:scale-95"
+            style={{
+              borderColor: siteConfig.colors.primary,
+              color: siteConfig.colors.primary,
+            }}
           >
             <FaPhone aria-hidden="true" />
             Llamar ahora
@@ -88,7 +88,7 @@ export default function Hero() {
             href={`https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white transition-all hover:opacity-90 active:scale-95 shadow-md"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 font-medium text-sm uppercase tracking-widest text-white transition-all hover:opacity-90 active:scale-95"
             style={{ backgroundColor: '#25D366' }}
           >
             <FaWhatsapp aria-hidden="true" />
@@ -99,8 +99,8 @@ export default function Hero() {
         <motion.div className="mt-14" variants={itemVariants}>
           <Link
             href="/nosotros"
-            className="inline-flex flex-col items-center gap-1 text-sm uppercase tracking-widest hover:opacity-70 transition-opacity"
-            style={{ color: ctaLinkColor }}
+            className="inline-flex flex-col items-center gap-1 text-xs uppercase tracking-widest transition-opacity hover:opacity-60"
+            style={{ color: siteConfig.colors.primary }}
           >
             <span>Conocer más</span>
             <motion.span

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import { siteConfig } from '@/config/client-config'
 import Header from '@/components/Header'
@@ -7,7 +7,17 @@ import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { SchemaOrg } from '@/components/SchemaOrg'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-cormorant',
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -51,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${poppins.variable} ${cormorant.variable}`}>
       <head>
         <style>{`
           :root {
@@ -64,7 +74,7 @@ export default function RootLayout({
         `}</style>
         <SchemaOrg />
       </head>
-      <body className={inter.className}>
+      <body className="font-poppins">
         <a href="#main-content" className="skip-to-content">
           Saltar al contenido
         </a>

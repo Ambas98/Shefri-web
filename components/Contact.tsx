@@ -28,7 +28,7 @@ const fadeRight: Variants = {
 }
 
 const inputClass =
-  'w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:border-transparent transition-colors'
+  'w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder:text-[#5a5a5a]'
 
 function validate(data: FormData): FormErrors {
   const errors: FormErrors = {}
@@ -104,7 +104,7 @@ export default function Contact() {
   const focusRingStyle = { '--tw-ring-color': siteConfig.colors.primary } as React.CSSProperties
 
   return (
-    <section className="py-20 bg-gray-50" aria-labelledby="contact-heading">
+    <section className="py-20 bg-[#0a0a0a]" aria-labelledby="contact-heading">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-12"
@@ -113,14 +113,19 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
+          <p className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.25em] mb-3"
+             style={{ color: siteConfig.colors.primary }}>
+            <span className="flex-1 max-w-[60px] h-px opacity-30" style={{ backgroundColor: siteConfig.colors.primary }} />
+            Hablemos
+            <span className="flex-1 max-w-[60px] h-px opacity-30" style={{ backgroundColor: siteConfig.colors.primary }} />
+          </p>
           <h2
             id="contact-heading"
-            className="text-4xl font-bold mb-3"
-            style={{ color: siteConfig.colors.primary }}
+            className="font-cormorant text-4xl md:text-5xl font-light text-[#F0EEE6]"
           >
             Contacto
           </h2>
-          <p style={{ color: siteConfig.colors.textLight }}>Envianos tu consulta</p>
+          <p className="mt-3 text-[#9A9A8A]">Envianos tu consulta</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -135,7 +140,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-5" noValidate>
 
               <div>
-                <label htmlFor="name" className="block mb-1.5 text-sm font-medium" style={{ color: siteConfig.colors.text }}>
+                <label htmlFor="name" className="block mb-1.5 text-sm font-medium text-[#9A9A8A]">
                   Nombre <span aria-hidden="true" className="text-red-500">*</span>
                 </label>
                 <input
@@ -159,7 +164,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block mb-1.5 text-sm font-medium" style={{ color: siteConfig.colors.text }}>
+                <label htmlFor="email" className="block mb-1.5 text-sm font-medium text-[#9A9A8A]">
                   Email <span aria-hidden="true" className="text-red-500">*</span>
                 </label>
                 <input
@@ -183,8 +188,8 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block mb-1.5 text-sm font-medium" style={{ color: siteConfig.colors.text }}>
-                  Teléfono <span className="text-xs text-gray-400">(opcional)</span>
+                <label htmlFor="phone" className="block mb-1.5 text-sm font-medium text-[#9A9A8A]">
+                  Teléfono <span className="text-xs text-[#5a5a5a]">(opcional)</span>
                 </label>
                 <input
                   type="tel"
@@ -199,7 +204,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block mb-1.5 text-sm font-medium" style={{ color: siteConfig.colors.text }}>
+                <label htmlFor="message" className="block mb-1.5 text-sm font-medium text-[#9A9A8A]">
                   Mensaje <span aria-hidden="true" className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -224,7 +229,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full px-8 py-4 rounded-lg font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
+                className="w-full px-8 py-4 font-medium text-sm uppercase tracking-widest text-white transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ backgroundColor: siteConfig.colors.primary }}
                 aria-busy={status === 'sending'}
               >
@@ -235,7 +240,7 @@ export default function Contact() {
                 <motion.p
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-green-600 text-center font-medium text-sm bg-green-50 border border-green-200 rounded-lg py-3"
+                  className="text-green-400 text-center font-medium text-sm bg-green-950/50 border border-green-800 py-3"
                   role="status"
                 >
                   ¡Mensaje enviado! Te contactaremos pronto.
@@ -246,7 +251,7 @@ export default function Contact() {
                 <motion.p
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-red-600 text-center font-medium text-sm bg-red-50 border border-red-200 rounded-lg py-3"
+                  className="text-red-400 text-center font-medium text-sm bg-red-950/50 border border-red-800 py-3"
                   role="alert"
                 >
                   Hubo un error al enviar. Por favor, intentá nuevamente.
@@ -262,7 +267,7 @@ export default function Contact() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="bg-white rounded-xl shadow-md overflow-hidden" style={{ minHeight: '420px' }}>
+            <div className="bg-[#1a1a1a] border border-[#2a2a2a] overflow-hidden" style={{ minHeight: '420px' }}>
               <iframe
                 src={mapSrc}
                 width="100%"
@@ -274,7 +279,7 @@ export default function Contact() {
                 title={`Ubicación de ${siteConfig.businessName}`}
               />
             </div>
-            <p className="mt-3 text-sm text-center" style={{ color: siteConfig.colors.textLight }}>
+            <p className="mt-3 text-sm text-center text-[#9A9A8A]">
               {siteConfig.contact.address}
             </p>
           </motion.div>
