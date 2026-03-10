@@ -49,6 +49,7 @@ export default function Header() {
               width={90}
               height={105}
               priority
+              sizes="90px"
               style={{ mixBlendMode: 'screen' }}
             />
           </Link>

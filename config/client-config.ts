@@ -108,7 +108,7 @@ export const siteConfig = {
         { name: "Criolla", price: "12000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, salsa criolla, mayo de ajo y aceite de oliva. Envuelta en masa de pizza.", image: "criollo.webp" },
         { name: "Margarita", price: "12000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, reggianito, pesto de albahaca y nueces, albahaca fresca y aceite de oliva. Envuelta en masa de pizza.", image: "panchito_margarita.webp" },
         { name: "Cheddar", price: "13000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, cheddar, panceta crocante y verdeo. Envuelta en masa de pizza.", image: "cheddar_rotated.webp" },
-        { name: "Guacamole", price: "13000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella y palta. Envuelta en masa de pizza.", image: "pancho_guacamole .webp" }
+        { name: "Guacamole", price: "13000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella y palta. Envuelta en masa de pizza.", image: "pancho_guacamole.webp" }
       ]
     },
     {
@@ -152,7 +152,7 @@ export const siteConfig = {
     { file: "calzon_fugaza_2.webp", alt: "Calzón Fugazza detalle" },
     { file: "cheddar_rotated.webp", alt: "Pizza dog Cheddar" },
     { file: "cheddar_2_rotated.webp", alt: "Pizza dog Cheddar detalle" },
-    { file: "dolce.jpg", alt: "Pizza Shefri" },
+    { file: "napolitana.webp", alt: "Pizza Napolitana Shefri" },
     { file: "ciollo2.webp", alt: "Pizza dog Criolla variante" }
   ],
 
@@ -204,6 +204,7 @@ export const siteConfig = {
     gazeboPhoto: "",   // Nombre del archivo en /public/images/ cuando esté disponible
     hornitosPhoto: "", // Nombre del archivo en /public/images/ cuando esté disponible
     ctaText: "Consultar disponibilidad",
+    whatsappMessage: "Hola Shefri! Me interesa contratar para un evento.",
   },
 
   // ==========================================

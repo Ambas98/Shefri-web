@@ -35,7 +35,7 @@ const fadeRight: Variants = {
 }
 
 const inputClass =
-  'w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder:text-[#5a5a5a]'
+  'w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] text-white focus:outline-none focus-visible:ring-2 focus-visible:border-transparent transition-colors placeholder:text-[#5a5a5a]'
 
 function validate(data: FormData): FormErrors {
   const errors: FormErrors = {}
@@ -108,7 +108,7 @@ export default function Contact() {
   }
 
   const focusRingStyle = { '--tw-ring-color': siteConfig.colors.primary } as React.CSSProperties
-  const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent('Hola Shefri! Me interesa contratar para un evento.')}`
+  const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(siteConfig.events.whatsappMessage)}`
 
   return (
     <section className="py-20 bg-[#0a0a0a]" aria-labelledby="events-heading">

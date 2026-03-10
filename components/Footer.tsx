@@ -40,6 +40,7 @@ export default function Footer() {
                 alt={siteConfig.businessName}
                 width={80}
                 height={93}
+                sizes="80px"
                 style={{ mixBlendMode: 'screen' }}
               />
             </div>
@@ -70,13 +71,15 @@ export default function Footer() {
                 <FaWhatsapp aria-hidden="true" />
                 WhatsApp
               </a>
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                className="flex items-center gap-2 text-[#9A9A8A] hover:text-white transition-colors text-sm break-all"
-              >
-                <FaEnvelope aria-hidden="true" />
-                {siteConfig.contact.email}
-              </a>
+              {siteConfig.contact.email && (
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="flex items-center gap-2 text-[#9A9A8A] hover:text-white transition-colors text-sm break-all"
+                >
+                  <FaEnvelope aria-hidden="true" />
+                  {siteConfig.contact.email}
+                </a>
+              )}
             </div>
           </div>
 
@@ -91,7 +94,7 @@ export default function Footer() {
                 const isClosed = hours === 'Cerrado'
                 return (
                   <div key={day} className="flex justify-between text-xs gap-3">
-                    <dt className="text-[#5a5a5a]">{daysShort[day]}</dt>
+                    <dt className="text-[#7a7a7a]">{daysShort[day]}</dt>
                     <dd style={{ color: isClosed ? siteConfig.colors.secondary : '#9A9A8A' }}>{hours}</dd>
                   </div>
                 )
@@ -124,7 +127,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#1a1a1a] pt-8 text-center text-[#5a5a5a] text-sm">
+        <div className="border-t border-[#1a1a1a] pt-8 text-center text-[#7a7a7a] text-sm">
           <p>© {currentYear} {siteConfig.businessName}. Todos los derechos reservados.</p>
         </div>
       </div>

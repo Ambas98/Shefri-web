@@ -40,7 +40,7 @@ export function SchemaOrg() {
     servesCuisine: siteConfig.cuisine,
     priceRange: siteConfig.priceRange,
     telephone: siteConfig.contact.phone,
-    email: siteConfig.contact.email,
+    ...(siteConfig.contact.email && { email: siteConfig.contact.email }),
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.contact.address,

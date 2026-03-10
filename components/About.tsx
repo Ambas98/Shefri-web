@@ -163,24 +163,26 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4 bg-[#1a1a1a] border border-[#2a2a2a] p-5 rounded-lg">
-              <FaEnvelope
-                className="text-2xl mt-1 shrink-0"
-                style={{ color: siteConfig.colors.primary }}
-                aria-hidden="true"
-              />
-              <div>
-                <h3 className="font-semibold text-base mb-1 text-[#F0EEE6]">
-                  Email
-                </h3>
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="hover:opacity-70 transition-opacity break-all text-[#9A9A8A] text-sm"
-                >
-                  {siteConfig.contact.email}
-                </a>
+            {siteConfig.contact.email && (
+              <div className="flex items-start gap-4 bg-[#1a1a1a] border border-[#2a2a2a] p-5 rounded-lg">
+                <FaEnvelope
+                  className="text-2xl mt-1 shrink-0"
+                  style={{ color: siteConfig.colors.primary }}
+                  aria-hidden="true"
+                />
+                <div>
+                  <h3 className="font-semibold text-base mb-1 text-[#F0EEE6]">
+                    Email
+                  </h3>
+                  <a
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="hover:opacity-70 transition-opacity break-all text-[#9A9A8A] text-sm"
+                  >
+                    {siteConfig.contact.email}
+                  </a>
+                </div>
               </div>
-            </div>
+            )}
           </motion.div>
 
           {/* Horarios */}
