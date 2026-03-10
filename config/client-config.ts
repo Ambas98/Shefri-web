@@ -29,7 +29,7 @@ export const siteConfig = {
   contact: {
     phone: "+54 9 264 514-1313",
     whatsapp: "5492645141313",
-    email: "",
+    email: "Shefrisabornapolitano@gmail.com",
     address: "Manuel Zavalla 850 Norte, Ayres Village, Rivadavia, San Juan"
   },
 
