@@ -89,7 +89,7 @@ export const siteConfig = {
         { name: "Súper Provolone", price: "16000", description: "Salsa pomodoro, mozzarella y extra provolone. 8 porc. $16.000 | 4 porc. $10.500", image: "provolone-1.webp" },
         { name: "Serrana", price: "23000", description: "Salsa pomodoro, mozzarella, jamón crudo, rúcula y reggianito. 8 porc. $23.000 | 4 porc. $14.000", image: "serrana-1.webp" },
         { name: "Rústica", price: "19500", description: "Crema de leche, mozzarella, panceta crocante, rodajas de papa al romero con ají molido y reggianito. 8 porc. $19.500 | 4 porc. $11.500", image: "rustica.webp" },
-        { name: "Pistachela", price: "20500", description: "Base de pesto de albahaca y nuez, mozzarella, pistachos y mortadela bologna. 8 porc. $20.500 | 4 porc. $12.500", image: "Pistachella-1.webp" },
+        { name: "Pistachela", price: "20500", description: "Base de pesto de albahaca y nuez, mozzarella, pistachos y mortadela bologna. 8 porc. $20.500 | 4 porc. $12.500", image: "pistachella-2.webp" },
         { name: "Especial", price: "16000", description: "Salsa pomodoro, mozzarella, jamón cocido y morrón. 8 porc. $16.000 | 4 porc. $9.000", image: "especial-1.webp" }
       ]
     },
