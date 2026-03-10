@@ -1,8 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import { motion, type Variants } from 'framer-motion'
 import { siteConfig } from '@/config/client-config'
-import { FaClock, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa'
+import { FaClock, FaMapMarkerAlt, FaPhone, FaEnvelope, FaCamera } from 'react-icons/fa'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -73,6 +74,42 @@ export default function About() {
             </p>
           )}
         </motion.div>
+
+        {/* Fotos del local */}
+        {siteConfig.localPhotos && siteConfig.localPhotos.length > 0 && (
+          <motion.div
+            className="mb-14 max-w-5xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {siteConfig.localPhotos.map((photo, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-square overflow-hidden rounded-lg bg-[#1a1a1a] border border-[#2a2a2a]"
+                >
+                  {photo.file ? (
+                    <Image
+                      src={`/images/${photo.file}`}
+                      alt={photo.alt}
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-[#2a2a2a]">
+                      <FaCamera className="text-3xl" />
+                      <span className="text-xs text-center px-3 leading-tight" style={{ color: '#3a3a3a' }}>
+                        {photo.alt}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
 

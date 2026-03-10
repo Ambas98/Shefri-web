@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { siteConfig } from '@/config/client-config'
@@ -11,8 +12,7 @@ const menuItems = [
   { label: 'Inicio',    href: '/' },
   { label: 'Nosotros', href: '/nosotros' },
   { label: siteConfig.menuLabel, href: '/menu' },
-  { label: 'Galería',  href: '/galeria' },
-  { label: 'Contacto', href: '/contacto' },
+  { label: 'Eventos',  href: '/contacto' },
 ]
 
 export default function Header() {
@@ -42,11 +42,15 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4" aria-label="Navegación principal">
         <div className="flex justify-between items-center">
           {/* Logo / Nombre del negocio */}
-          <Link
-            href="/"
-            className="text-2xl font-bold text-white transition-opacity hover:opacity-80"
-          >
-            {siteConfig.businessName}
+          <Link href="/" className="transition-opacity hover:opacity-80 flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt={siteConfig.businessName}
+              width={90}
+              height={105}
+              priority
+              style={{ mixBlendMode: 'screen' }}
+            />
           </Link>
 
           {/* Menu desktop */}

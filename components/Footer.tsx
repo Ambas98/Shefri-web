@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { siteConfig } from '@/config/client-config'
 import {
   FaFacebook, FaInstagram, FaTwitter, FaLinkedin,
@@ -33,9 +34,15 @@ export default function Footer() {
 
           {/* Info del negocio */}
           <div>
-            <h3 className="text-xl font-bold mb-3" style={{ color: siteConfig.colors.primary }}>
-              {siteConfig.businessName}
-            </h3>
+            <div className="mb-3">
+              <Image
+                src="/images/logo.png"
+                alt={siteConfig.businessName}
+                width={80}
+                height={93}
+                style={{ mixBlendMode: 'screen' }}
+              />
+            </div>
             <p className="text-[#9A9A8A] text-sm leading-relaxed mb-3">{siteConfig.tagline}</p>
             <div className="flex items-start gap-2 text-[#9A9A8A] text-sm">
               <FaMapMarkerAlt className="mt-0.5 shrink-0" aria-hidden="true" />

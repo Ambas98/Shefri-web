@@ -129,12 +129,10 @@ export const siteConfig = {
     {
       category: "Bebidas",
       items: [
-        { name: "CocaCola / Sprite", price: "3000", description: "Botella 500cc." },
-        { name: "Fanta / Schweppes", price: "3000", description: "Botella 500cc." },
-        { name: "Aquarius", price: "3000", description: "Botella 300cc." },
+        { name: "Gaseosas", price: "3000", description: "Botella 500cc." },
+        { name: "Agua saborizada", price: "3000", description: "Botella 500cc." },
         { name: "Agua sin gas / con gas", price: "2000", description: "Botella 500cc." },
-        { name: "Cerveza Andes Origen", price: "4000", description: "Lata 500cc." },
-        { name: "Cerveza Budweiser", price: "4000", description: "Lata 500cc." },
+        { name: "Cerveza", price: "4000", description: "Lata 500cc." },
         { name: "Cerveza Donata", price: "5500", description: "IPA / PAMPEANA / IRISH / SCOTCH. Lata 500cc." }
       ]
     }
@@ -172,15 +170,44 @@ export const siteConfig = {
   // Usá https://coolors.co para elegir paleta
   // Formato: código hexadecimal (#RRGGBB)
   colors: {
-    primary: "#C9A84C",      // Color principal (gold — botones, links, encabezados)
-    secondary: "#A0262A",    // Color secundario (crimson — acentos, hover)
+    primary: "#E44B25",      // Color principal (rojo-naranja — marca Shefri)
+    secondary: "#64A242",    // Color secundario (verde oliva — marca Shefri)
     background: "#0a0a0a",   // Fondo general (deep dark)
     text: "#F0EEE6",         // Color del texto principal (off-white)
     textLight: "#9A9A8A"     // Color del texto secundario (muted)
   },
 
   // ==========================================
-  // 12. FORMSPREE (Formulario de contacto)
+  // 12. FOTOS DEL LOCAL (sección Nosotros)
+  // ==========================================
+  // Agregar nombres de archivos en /public/images/ cuando estén disponibles
+  localPhotos: [
+    { file: "", alt: "El local de Shefri" },
+    { file: "", alt: "Nuestro horno napolitano" },
+    { file: "", alt: "Ambiente del local" },
+    { file: "", alt: "Detalle del local" },
+  ],
+
+  // ==========================================
+  // 13. EVENTOS
+  // ==========================================
+  events: {
+    title: "Shefri para tus Eventos",
+    description: "Llevamos el auténtico sabor napolitano hasta donde vos elijas. Con nuestro gazebo y hornos portátiles a 400°, preparamos pizzas frescas en el momento para que tus invitados vivan la experiencia completa.",
+    features: [
+      "Hornos portátiles a 400° — pizzas listas en 5 minutos",
+      "Gazebo propio, instalamos en cualquier espacio",
+      "Cumpleaños, casamientos, eventos corporativos y más",
+      "Menú personalizable según el evento",
+      "Atención a cargo del propio dueño",
+    ],
+    gazeboPhoto: "",   // Nombre del archivo en /public/images/ cuando esté disponible
+    hornitosPhoto: "", // Nombre del archivo en /public/images/ cuando esté disponible
+    ctaText: "Consultar disponibilidad",
+  },
+
+  // ==========================================
+  // 14. FORMSPREE (Formulario de contacto)
   // ==========================================
   // Obtén tu ID en https://formspree.io después de crear el form
   formspreeId: "mwkagzkp",  // Reemplaza con el ID real
