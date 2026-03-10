@@ -182,10 +182,10 @@ export const siteConfig = {
   // ==========================================
   // Agregar nombres de archivos en /public/images/ cuando estén disponibles
   localPhotos: [
-    { file: "", alt: "El local de Shefri" },
-    { file: "", alt: "Nuestro horno napolitano" },
-    { file: "", alt: "Ambiente del local" },
-    { file: "", alt: "Detalle del local" },
+    { file: "Local-2.jpeg", alt: "Fachada de Shefri Sabor Napolitano" },
+    { file: "Local-6.jpeg", alt: "Interior del local con barra y horno napolitano" },
+    { file: "Local-5.jpeg", alt: "Horno napolitano a 400°" },
+    { file: "Local-8.jpeg", alt: "Ambiente interior de Shefri" },
   ],
 
   // ==========================================
@@ -201,8 +201,8 @@ export const siteConfig = {
       "Menú personalizable según el evento",
       "Atención a cargo del propio dueño",
     ],
-    gazeboPhoto: "",   // Nombre del archivo en /public/images/ cuando esté disponible
-    hornitosPhoto: "", // Nombre del archivo en /public/images/ cuando esté disponible
+    gazeboPhoto: "cazebo-2.jpeg", // Foto del gazebo para eventos
+    hornitosPhoto: "",            // Nombre del archivo en /public/images/ cuando esté disponible
     ctaText: "Consultar disponibilidad",
     whatsappMessage: "Hola Shefri! Me interesa contratar para un evento.",
   },
