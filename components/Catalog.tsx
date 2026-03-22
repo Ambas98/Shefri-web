@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { siteConfig } from '@/config/client-config'
@@ -18,6 +18,7 @@ const defaultItem = siteConfig.catalog[0]?.items[0] as CatalogItem
 export default function Catalog() {
   const [selectedItem, setSelectedItem] = useState<CatalogItem>(defaultItem)
   const [openCategory, setOpenCategory] = useState<string | null>(null)
+  const categoryRefs = useRef<Map<string, HTMLDivElement>>(new Map())
 
   const hasImage = selectedItem?.image
 
@@ -137,6 +138,7 @@ export default function Catalog() {
               return (
                 <div
                   key={cat.category}
+                  ref={(el) => { if (el) categoryRefs.current.set(cat.category, el) }}
                   onMouseEnter={() => setOpenCategory(cat.category)}
                   onMouseLeave={() => setOpenCategory(null)}
                 >
@@ -148,7 +150,15 @@ export default function Catalog() {
                       borderColor: isOpen ? `${siteConfig.colors.primary}60` : '#D4CCBC',
                       borderBottomColor: isOpen ? 'transparent' : '#D4CCBC',
                     }}
-                    onClick={() => setOpenCategory(isOpen ? null : cat.category)}
+                    onClick={() => {
+                      const willOpen = !isOpen
+                      setOpenCategory(willOpen ? cat.category : null)
+                      if (willOpen) {
+                        setTimeout(() => {
+                          categoryRefs.current.get(cat.category)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+                        }, 250)
+                      }
+                    }}
                     aria-expanded={isOpen}
                   >
                     <span className="text-sm font-medium uppercase tracking-widest" style={{ color: siteConfig.colors.text }}>
