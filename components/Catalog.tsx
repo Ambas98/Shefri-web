@@ -55,7 +55,7 @@ export default function Catalog() {
 
           {/* Large product image */}
           <motion.div
-            className="w-full lg:flex-1 sticky top-20 lg:static z-10"
+            className="w-full lg:flex-1 sticky top-24 lg:static z-10"
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -76,7 +76,7 @@ export default function Catalog() {
                       src={`/images/${selectedItem.image}`}
                       alt={selectedItem.name}
                       fill
-                      className="object-cover object-bottom"
+                      className="object-contain"
                       sizes="(max-width: 1024px) 100vw, 55vw"
                       priority
                     />
