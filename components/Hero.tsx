@@ -109,6 +109,7 @@ export default function Hero() {
               transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
               aria-hidden="true"
               className="text-xl"
+              style={{ willChange: 'transform' }}
             >
               ↓
             </motion.span>

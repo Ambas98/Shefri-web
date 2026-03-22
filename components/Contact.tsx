@@ -161,6 +161,7 @@ export default function Contact() {
                 src={`/images/${siteConfig.events.gazeboPhoto}`}
                 alt="Gazebo para eventos"
                 fill
+                loading="lazy"
                 className="object-cover"
               />
             </div>
@@ -174,6 +175,7 @@ export default function Contact() {
                 src={`/images/${siteConfig.events.hornitosPhoto}`}
                 alt="Hornos portátiles"
                 fill
+                loading="lazy"
                 className="object-cover"
               />
             </div>

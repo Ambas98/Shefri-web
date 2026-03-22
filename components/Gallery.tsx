@@ -8,12 +8,12 @@ import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 const staggerContainer: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.07 } },
+  visible: { transition: { staggerChildren: 0.04 } },
 }
 
 const itemVariant: Variants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.45, ease: 'easeOut' } },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3 } },
 }
 
 export default function Gallery() {
@@ -97,7 +97,8 @@ export default function Gallery() {
                 src={`/images/${image.file}`}
                 alt={image.alt}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105 group-active:scale-105"
+                loading="lazy"
+                className="object-cover transition-transform duration-300 group-hover:scale-105 group-active:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div

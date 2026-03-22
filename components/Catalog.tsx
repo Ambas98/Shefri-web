@@ -81,7 +81,7 @@ export default function Catalog() {
                       fill
                       className="object-contain"
                       sizes="(max-width: 1024px) 100vw, 55vw"
-                      priority
+                      loading="lazy"
                     />
                     {/* Gradient overlay with product info */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -214,6 +214,7 @@ export default function Catalog() {
                                     fill
                                     className="object-cover"
                                     sizes="40px"
+                                    loading="lazy"
                                   />
                                 </div>
                               )}

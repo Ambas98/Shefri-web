@@ -86,9 +86,9 @@ export default function About() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {siteConfig.localPhotos.map((photo, i) => (
+              {siteConfig.localPhotos.map((photo) => (
                 <div
-                  key={i}
+                  key={photo.file || photo.alt}
                   className="relative aspect-square overflow-hidden rounded-lg border"
                   style={{ backgroundColor: '#EDE8DC', borderColor: '#D4CCBC' }}
                 >
@@ -97,6 +97,7 @@ export default function About() {
                       src={`/images/${photo.file}`}
                       alt={photo.alt}
                       fill
+                      loading="lazy"
                       className="object-cover transition-transform duration-500 hover:scale-105"
                     />
                   ) : (
