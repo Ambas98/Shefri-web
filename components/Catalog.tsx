@@ -55,13 +55,13 @@ export default function Catalog() {
 
           {/* Large product image */}
           <motion.div
-            className="flex-1 w-full"
+            className="w-full lg:flex-1 sticky top-20 lg:static z-10"
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative w-full aspect-[4/3] max-w-2xl mx-auto lg:mx-0 rounded-2xl overflow-hidden" style={{ backgroundColor: '#EDE8DC' }}>
+            <div className="relative w-full aspect-[3/2] lg:aspect-[4/3] max-w-2xl mx-auto lg:mx-0 rounded-2xl overflow-hidden" style={{ backgroundColor: '#EDE8DC' }}>
               <AnimatePresence mode="wait">
                 {hasImage ? (
                   <motion.div
