@@ -19,8 +19,8 @@ export const siteConfig = {
   // 2. HISTORIA / SOBRE NOSOTROS
   // ==========================================
   about: {
-    story: "Shefri es una pizzería estilo napolitano, atendida por su propio dueño. Trabajamos a 400°, lo que nos permite tener nuestros productos listos en 5 minutos. Acercate por el local y descubrí el verdadero sabor napolitano.",
-    mission: "Arte, amor y pasión en cada porción."
+    story: "Hay pizzas, y después está Shefri. Nacimos con una obsesión simple: hacer las cosas bien, sin atajos. A 400°, en menos de 5 minutos, cada pizza sale del horno con la corteza perfecta — crujiente por fuera, aireada por dentro — tal como manda la tradición napolitana. Acá no hay cadenas ni franquicias: hay un dueño que trabaja el amasado, cuida los ingredientes y atiende cada pedido como si fuera el primero.",
+    mission: "Fuego real. Masa viva. Sabor que no se finge."
   },
 
   // ==========================================
@@ -170,11 +170,11 @@ export const siteConfig = {
   // Usá https://coolors.co para elegir paleta
   // Formato: código hexadecimal (#RRGGBB)
   colors: {
-    primary: "#E44B25",      // Color principal (rojo-naranja — marca Shefri)
-    secondary: "#64A242",    // Color secundario (verde oliva — marca Shefri)
-    background: "#0a0a0a",   // Fondo general (deep dark)
-    text: "#F0EEE6",         // Color del texto principal (off-white)
-    textLight: "#9A9A8A"     // Color del texto secundario (muted)
+    primary: "#C8390A",      // Color principal (rojo napolitano profundo)
+    secondary: "#4A7C2F",    // Color secundario (verde oliva)
+    background: "#F5F0E8",   // Fondo crema cálido
+    text: "#1C1C1A",         // Texto principal (casi negro)
+    textLight: "#6B6459"     // Texto secundario (marrón grisáceo)
   },
 
   // ==========================================
@@ -193,7 +193,7 @@ export const siteConfig = {
   // ==========================================
   events: {
     title: "Shefri para tus Eventos",
-    description: "Llevamos el auténtico sabor napolitano hasta donde vos elijas. Con nuestro gazebo y hornos portátiles a 400°, preparamos pizzas frescas en el momento para que tus invitados vivan la experiencia completa.",
+    description: "Imaginate el olor a masa recién horneada en tu propio evento. Llevamos todo: el horno, el gazebo y las manos que hacen la magia. A 400°, tus invitados ven cómo se prepara cada pizza y la reciben lista en minutos. No es catering — es una experiencia napolitana en vivo.",
     features: [
       "Hornos portátiles a 400° — pizzas listas en 5 minutos",
       "Gazebo propio, instalamos en cualquier espacio",

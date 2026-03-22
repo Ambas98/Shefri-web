@@ -35,7 +35,7 @@ const fadeRight: Variants = {
 }
 
 const inputClass =
-  'w-full px-4 py-3 bg-[#1a1a1a] border border-[#2a2a2a] text-white focus:outline-none focus-visible:ring-2 focus-visible:border-transparent transition-colors placeholder:text-[#5a5a5a]'
+  'w-full px-4 py-3 bg-white border border-[#D4CCBC] text-[#1C1C1A] focus:outline-none focus-visible:ring-2 focus-visible:border-transparent transition-colors placeholder:text-[#A89F93]'
 
 function validate(data: FormData): FormErrors {
   const errors: FormErrors = {}
@@ -55,7 +55,7 @@ function validate(data: FormData): FormErrors {
 
 function PhotoPlaceholder({ label }: { label: string }) {
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] flex flex-col items-center justify-center gap-3 text-[#3a3a3a]">
+    <div className="relative aspect-video w-full overflow-hidden rounded-lg border flex flex-col items-center justify-center gap-3" style={{ backgroundColor: '#EDE8DC', borderColor: '#D4CCBC', color: '#A89F93' }}>
       <FaCamera className="text-4xl" />
       <span className="text-sm text-center px-4 leading-snug">{label}</span>
     </div>
@@ -111,7 +111,7 @@ export default function Contact() {
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(siteConfig.events.whatsappMessage)}`
 
   return (
-    <section className="py-20 bg-[#0a0a0a]" aria-labelledby="events-heading">
+    <section className="py-20" style={{ backgroundColor: siteConfig.colors.background }} aria-labelledby="events-heading">
       <div className="container mx-auto px-4">
 
         {/* Encabezado */}
@@ -132,11 +132,12 @@ export default function Contact() {
           </p>
           <h2
             id="events-heading"
-            className="font-cormorant text-4xl md:text-5xl font-light text-[#F0EEE6] mb-5"
+            className="font-cormorant text-4xl md:text-5xl font-light mb-5"
+            style={{ color: siteConfig.colors.text }}
           >
             {siteConfig.events.title}
           </h2>
-          <p className="text-[#9A9A8A] max-w-2xl mx-auto leading-relaxed">
+          <p className="max-w-2xl mx-auto leading-relaxed" style={{ color: siteConfig.colors.textLight }}>
             {siteConfig.events.description}
           </p>
         </motion.div>
@@ -187,11 +188,11 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.2 }}
             className="space-y-6"
           >
-            <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg p-6">
-              <h3 className="font-semibold text-base text-[#F0EEE6] mb-5">¿Qué incluye?</h3>
+            <div className="border rounded-lg p-6" style={{ backgroundColor: '#EDE8DC', borderColor: '#D4CCBC' }}>
+              <h3 className="font-semibold text-base mb-5" style={{ color: siteConfig.colors.text }}>¿Qué incluye?</h3>
               <ul className="space-y-3">
                 {siteConfig.events.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-[#9A9A8A]">
+                  <li key={i} className="flex items-start gap-3 text-sm" style={{ color: siteConfig.colors.textLight }}>
                     <FaCheckCircle
                       className="text-base mt-0.5 shrink-0"
                       style={{ color: siteConfig.colors.secondary }}
@@ -221,13 +222,13 @@ export default function Contact() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <p className="text-sm text-[#9A9A8A] mb-5">
+            <p className="text-sm mb-5" style={{ color: siteConfig.colors.textLight }}>
               O dejanos tus datos y te contactamos a la brevedad.
             </p>
             <form onSubmit={handleSubmit} className="space-y-5" noValidate>
 
               <div>
-                <label htmlFor="name" className="block mb-1.5 text-sm font-medium text-[#9A9A8A]">
+                <label htmlFor="name" className="block mb-1.5 text-sm font-medium" style={{ color: siteConfig.colors.textLight }}>
                   Nombre <span aria-hidden="true" className="text-red-500">*</span>
                 </label>
                 <input
@@ -249,7 +250,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block mb-1.5 text-sm font-medium text-[#9A9A8A]">
+                <label htmlFor="email" className="block mb-1.5 text-sm font-medium" style={{ color: siteConfig.colors.textLight }}>
                   Email <span aria-hidden="true" className="text-red-500">*</span>
                 </label>
                 <input
@@ -271,7 +272,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block mb-1.5 text-sm font-medium text-[#9A9A8A]">
+                <label htmlFor="phone" className="block mb-1.5 text-sm font-medium" style={{ color: siteConfig.colors.textLight }}>
                   Teléfono <span className="text-xs text-[#5a5a5a]">(opcional)</span>
                 </label>
                 <input
@@ -287,7 +288,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block mb-1.5 text-sm font-medium text-[#9A9A8A]">
+                <label htmlFor="message" className="block mb-1.5 text-sm font-medium" style={{ color: siteConfig.colors.textLight }}>
                   Contanos sobre tu evento <span aria-hidden="true" className="text-red-500">*</span>
                 </label>
                 <textarea

@@ -33,7 +33,7 @@ const daysNames: Record<string, string> = {
 
 export default function About() {
   return (
-    <section className="py-20 bg-[#0a0a0a]" aria-labelledby="about-heading">
+    <section className="py-20" style={{ backgroundColor: siteConfig.colors.background }} aria-labelledby="about-heading">
       <div className="container mx-auto px-4">
 
         {/* Heading */}
@@ -52,14 +52,15 @@ export default function About() {
           </p>
           <h2
             id="about-heading"
-            className="font-cormorant text-4xl md:text-5xl font-light text-[#F0EEE6] mb-6"
+            className="font-cormorant text-4xl md:text-5xl font-light mb-6"
+            style={{ color: siteConfig.colors.text }}
           >
             Sobre Nosotros
           </h2>
 
           {/* Story */}
           {siteConfig.about.story && (
-            <p className="text-base leading-relaxed max-w-3xl mx-auto text-[#9A9A8A]">
+            <p className="text-base leading-relaxed max-w-3xl mx-auto" style={{ color: siteConfig.colors.textLight }}>
               {siteConfig.about.story}
             </p>
           )}
@@ -88,7 +89,8 @@ export default function About() {
               {siteConfig.localPhotos.map((photo, i) => (
                 <div
                   key={i}
-                  className="relative aspect-square overflow-hidden rounded-lg bg-[#1a1a1a] border border-[#2a2a2a]"
+                  className="relative aspect-square overflow-hidden rounded-lg border"
+                  style={{ backgroundColor: '#EDE8DC', borderColor: '#D4CCBC' }}
                 >
                   {photo.file ? (
                     <Image
@@ -121,17 +123,17 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="flex items-start gap-4 bg-[#1a1a1a] border border-[#2a2a2a] p-5 rounded-lg">
+            <div className="flex items-start gap-4 border p-5 rounded-lg" style={{ backgroundColor: '#EDE8DC', borderColor: '#D4CCBC' }}>
               <FaMapMarkerAlt
                 className="text-2xl mt-1 shrink-0"
                 style={{ color: siteConfig.colors.primary }}
                 aria-hidden="true"
               />
               <div>
-                <h3 className="font-semibold text-base mb-1 text-[#F0EEE6]">
+                <h3 className="font-semibold text-base mb-1" style={{ color: siteConfig.colors.text }}>
                   Ubicación
                 </h3>
-                <p className="text-[#9A9A8A] text-sm">{siteConfig.contact.address}</p>
+                <p className="text-sm" style={{ color: siteConfig.colors.textLight }}>{siteConfig.contact.address}</p>
                 <a
                   href={siteConfig.location.mapUrl}
                   target="_blank"
@@ -144,19 +146,20 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4 bg-[#1a1a1a] border border-[#2a2a2a] p-5 rounded-lg">
+            <div className="flex items-start gap-4 border p-5 rounded-lg" style={{ backgroundColor: '#EDE8DC', borderColor: '#D4CCBC' }}>
               <FaPhone
                 className="text-2xl mt-1 shrink-0"
                 style={{ color: siteConfig.colors.primary }}
                 aria-hidden="true"
               />
               <div>
-                <h3 className="font-semibold text-base mb-1 text-[#F0EEE6]">
+                <h3 className="font-semibold text-base mb-1" style={{ color: siteConfig.colors.text }}>
                   Teléfono
                 </h3>
                 <a
                   href={`tel:${siteConfig.contact.phone}`}
-                  className="hover:opacity-70 transition-opacity text-[#9A9A8A] text-sm"
+                  className="hover:opacity-70 transition-opacity text-sm"
+                  style={{ color: siteConfig.colors.textLight }}
                 >
                   {siteConfig.contact.phone}
                 </a>
@@ -164,19 +167,20 @@ export default function About() {
             </div>
 
             {siteConfig.contact.email && (
-              <div className="flex items-start gap-4 bg-[#1a1a1a] border border-[#2a2a2a] p-5 rounded-lg">
+              <div className="flex items-start gap-4 border p-5 rounded-lg" style={{ backgroundColor: '#EDE8DC', borderColor: '#D4CCBC' }}>
                 <FaEnvelope
                   className="text-2xl mt-1 shrink-0"
                   style={{ color: siteConfig.colors.primary }}
                   aria-hidden="true"
                 />
                 <div>
-                  <h3 className="font-semibold text-base mb-1 text-[#F0EEE6]">
+                  <h3 className="font-semibold text-base mb-1" style={{ color: siteConfig.colors.text }}>
                     Email
                   </h3>
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="hover:opacity-70 transition-opacity break-all text-[#9A9A8A] text-sm"
+                    className="hover:opacity-70 transition-opacity break-all text-sm"
+                  style={{ color: siteConfig.colors.textLight }}
                   >
                     {siteConfig.contact.email}
                   </a>
@@ -192,14 +196,14 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg p-6">
+            <div className="border rounded-lg p-6" style={{ backgroundColor: '#EDE8DC', borderColor: '#D4CCBC' }}>
               <div className="flex items-center gap-3 mb-6">
                 <FaClock
                   className="text-xl"
                   style={{ color: siteConfig.colors.primary }}
                   aria-hidden="true"
                 />
-                <h3 className="font-semibold text-base text-[#F0EEE6]">
+                <h3 className="font-semibold text-base" style={{ color: siteConfig.colors.text }}>
                   Horarios de Atención
                 </h3>
               </div>
@@ -208,13 +212,13 @@ export default function About() {
                   const hours = siteConfig.hours[day]
                   const isClosed = hours === 'Cerrado'
                   return (
-                    <div key={day} className="flex justify-between py-2 border-b border-[#2a2a2a]">
-                      <dt className="font-medium text-sm text-[#9A9A8A]">
+                    <div key={day} className="flex justify-between py-2 border-b" style={{ borderColor: '#D4CCBC' }}>
+                      <dt className="font-medium text-sm" style={{ color: siteConfig.colors.textLight }}>
                         {daysNames[day]}
                       </dt>
                       <dd
                         className="text-sm font-medium"
-                        style={{ color: isClosed ? siteConfig.colors.secondary : '#F0EEE6' }}
+                        style={{ color: isClosed ? siteConfig.colors.secondary : siteConfig.colors.text }}
                       >
                         {hours}
                       </dd>

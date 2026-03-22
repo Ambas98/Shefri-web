@@ -28,7 +28,7 @@ export default function Hero() {
         backgroundPosition: 'center',
       }
     : {
-        background: `radial-gradient(ellipse at center, ${siteConfig.colors.primary}12 0%, transparent 70%), #0a0a0a`,
+        background: `radial-gradient(ellipse at center, ${siteConfig.colors.primary}18 0%, transparent 70%), ${siteConfig.colors.background}`,
       }
 
   return (
@@ -54,7 +54,8 @@ export default function Hero() {
         </motion.p>
 
         <motion.h1
-          className="font-cormorant text-6xl md:text-7xl lg:text-8xl font-light tracking-wide mb-8 leading-tight text-[#F0EEE6]"
+          className="font-cormorant text-6xl md:text-7xl lg:text-8xl font-light tracking-wide mb-8 leading-tight"
+          style={{ color: siteConfig.colors.text }}
           variants={itemVariants}
         >
           {siteConfig.businessName}
@@ -62,7 +63,7 @@ export default function Hero() {
 
         <motion.p
           className="text-base md:text-lg mb-14 max-w-2xl mx-auto leading-relaxed"
-          style={{ color: '#9A9A8A' }}
+          style={{ color: siteConfig.colors.textLight }}
           variants={itemVariants}
         >
           {siteConfig.description}
@@ -74,7 +75,7 @@ export default function Hero() {
         >
           <a
             href={`tel:${siteConfig.contact.phone}`}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 border font-medium text-sm uppercase tracking-widest transition-all hover:opacity-80 active:scale-95"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 border font-medium text-sm uppercase tracking-widest transition-all hover:opacity-80 active:scale-95 bg-white/60"
             style={{
               borderColor: siteConfig.colors.primary,
               color: siteConfig.colors.primary,

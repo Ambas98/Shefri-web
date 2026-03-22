@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -33,11 +33,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#0a0a0a]/95 backdrop-blur-sm shadow-lg shadow-black/20'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        backgroundColor: isScrolled ? `${siteConfig.colors.background}F2` : 'transparent',
+        backdropFilter: isScrolled ? 'blur(8px)' : undefined,
+        boxShadow: isScrolled ? '0 1px 20px rgba(0,0,0,0.08)' : undefined,
+      }}
     >
       <nav className="container mx-auto px-4 py-4" aria-label="Navegación principal">
         <div className="flex justify-between items-center">
@@ -62,14 +63,14 @@ export default function Header() {
                   href={item.href}
                   className="relative py-1 text-sm font-medium transition-colors"
                   style={{
-                    color: isActive(item.href) ? siteConfig.colors.primary : '#9ca3af',
+                    color: isActive(item.href) ? siteConfig.colors.primary : siteConfig.colors.textLight,
                   }}
                   aria-current={isActive(item.href) ? 'page' : undefined}
                   onMouseEnter={(e) => {
-                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = '#ffffff'
+                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = siteConfig.colors.text
                   }}
                   onMouseLeave={(e) => {
-                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = '#9ca3af'
+                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = siteConfig.colors.textLight
                   }}
                 >
                   {item.label}
@@ -93,9 +94,9 @@ export default function Header() {
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
-              <FaTimes className="text-xl text-white" />
+              <FaTimes className="text-xl" style={{ color: siteConfig.colors.text } as React.CSSProperties} />
             ) : (
-              <FaBars className="text-xl text-white" />
+              <FaBars className="text-xl" style={{ color: siteConfig.colors.text } as React.CSSProperties} />
             )}
           </button>
         </div>
@@ -109,7 +110,8 @@ export default function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25, ease: 'easeInOut' }}
-              className="md:hidden overflow-hidden bg-[#0a0a0a]"
+              className="md:hidden overflow-hidden"
+              style={{ backgroundColor: siteConfig.colors.background }}
             >
               <div className="pt-4 pb-2 space-y-1 border-t border-white/10 mt-3">
                 {menuItems.map((item) => (
@@ -118,7 +120,7 @@ export default function Header() {
                       href={item.href}
                       className="block px-3 py-3 rounded-lg text-sm font-medium transition-colors hover:bg-white/5"
                       style={{
-                        color: isActive(item.href) ? siteConfig.colors.primary : '#ffffff',
+                        color: isActive(item.href) ? siteConfig.colors.primary : siteConfig.colors.text,
                       }}
                       aria-current={isActive(item.href) ? 'page' : undefined}
                     >

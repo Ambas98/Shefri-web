@@ -8,11 +8,11 @@
   These values serve as fallbacks only.
 */
 :root {
-  --primary-color: #C9A84C;
-  --secondary-color: #A0262A;
-  --background-color: #0a0a0a;
-  --text-color: #F0EEE6;
-  --text-light-color: #9A9A8A;
+  --primary-color: #C8390A;
+  --secondary-color: #4A7C2F;
+  --background-color: #F5F0E8;
+  --text-color: #1C1C1A;
+  --text-light-color: #6B6459;
 }
 
 html {

@@ -51,7 +51,7 @@ export default function Gallery() {
   const selectedImage = selectedIdx !== null ? images[selectedIdx] : null
 
   return (
-    <section className="py-20 bg-[#0a0a0a]" aria-labelledby="gallery-heading">
+    <section className="py-20" style={{ backgroundColor: siteConfig.colors.background }} aria-labelledby="gallery-heading">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-12"
@@ -68,7 +68,8 @@ export default function Gallery() {
           </p>
           <h2
             id="gallery-heading"
-            className="font-cormorant text-4xl md:text-5xl font-light text-[#F0EEE6]"
+            className="font-cormorant text-4xl md:text-5xl font-light"
+            style={{ color: siteConfig.colors.text }}
           >
             Galería
           </h2>
