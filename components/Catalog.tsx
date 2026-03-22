@@ -155,8 +155,12 @@ export default function Catalog() {
                       setOpenCategory(willOpen ? cat.category : null)
                       if (willOpen) {
                         setTimeout(() => {
-                          categoryRefs.current.get(cat.category)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-                        }, 250)
+                          const el = categoryRefs.current.get(cat.category)
+                          if (el) {
+                            const rect = el.getBoundingClientRect()
+                            window.scrollTo({ top: window.scrollY + rect.top - 8, behavior: 'smooth' })
+                          }
+                        }, 270)
                       }
                     }}
                     aria-expanded={isOpen}
@@ -189,7 +193,7 @@ export default function Catalog() {
                           return (
                             <button
                               key={idx}
-                              onClick={() => setSelectedItem(item as CatalogItem)}
+                              onClick={() => { if ((item as CatalogItem).image) setSelectedItem(item as CatalogItem) }}
                               className="w-full flex items-center gap-3 px-4 py-3 text-left transition-colors duration-150 border-b last:border-b-0"
                               style={{
                                 backgroundColor: isSelected ? '#E4DDD0' : '#F0EAE0',
