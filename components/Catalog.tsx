@@ -19,6 +19,7 @@ export default function Catalog() {
   const [selectedItem, setSelectedItem] = useState<CatalogItem>(defaultItem)
   const [openCategory, setOpenCategory] = useState<string | null>(null)
   const categoryRefs = useRef<Map<string, HTMLDivElement>>(new Map())
+  const stickyImageRef = useRef<HTMLDivElement>(null)
 
   const hasImage = selectedItem?.image
 
@@ -56,6 +57,7 @@ export default function Catalog() {
 
           {/* Large product image */}
           <motion.div
+            ref={stickyImageRef}
             className="w-full lg:flex-1 sticky top-24 lg:static z-10"
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -158,7 +160,8 @@ export default function Catalog() {
                           const el = categoryRefs.current.get(cat.category)
                           if (el) {
                             const rect = el.getBoundingClientRect()
-                            window.scrollTo({ top: window.scrollY + rect.top - 8, behavior: 'smooth' })
+                            const stickyBottom = stickyImageRef.current?.getBoundingClientRect().bottom ?? 0
+                            window.scrollTo({ top: window.scrollY + rect.top - stickyBottom - 8, behavior: 'smooth' })
                           }
                         }, 270)
                       }
