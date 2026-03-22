@@ -84,30 +84,27 @@ export default function Gallery() {
         >
           {images.map((image, idx) => (
             <motion.div
-              key={idx}
+              key={image.file}
               variants={itemVariant}
               className="relative aspect-square overflow-hidden rounded-xl cursor-pointer group"
               onClick={() => setSelectedIdx(idx)}
               role="button"
               tabIndex={0}
               aria-label={`Ver foto: ${image.alt}`}
-              onKeyDown={(e) => e.key === 'Enter' && setSelectedIdx(idx)}
+              onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setSelectedIdx(idx)}
             >
               <Image
                 src={`/images/${image.file}`}
                 alt={image.alt}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover transition-transform duration-500 group-hover:scale-105 group-active:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div
-                className="absolute inset-0 transition-colors duration-300 flex items-center justify-center"
-                style={{ backgroundColor: 'transparent' }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = `${siteConfig.colors.primary}33`)}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                className="absolute inset-0 flex items-center justify-center transition-colors duration-300 group-hover:bg-black/20 group-active:bg-black/20"
               >
                 <span
-                  className="text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-3 py-1 border"
+                  className="text-sm font-medium opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 px-3 py-1 border bg-white/80"
                   style={{ color: siteConfig.colors.primary, borderColor: siteConfig.colors.primary }}
                 >
                   Ver foto

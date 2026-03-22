@@ -13,7 +13,7 @@ type CatalogItem = {
   image?: string
 }
 
-const defaultItem = siteConfig.catalog[0]?.items[0] as CatalogItem
+const defaultItem: CatalogItem = siteConfig.catalog[0]?.items[0] ?? { name: '', price: '0' }
 
 export default function Catalog() {
   const [selectedItem, setSelectedItem] = useState<CatalogItem>(defaultItem)

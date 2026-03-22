@@ -89,12 +89,16 @@ export default function Contact() {
     }
     setErrors({})
     setStatus('sending')
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 10000)
     try {
       const response = await fetch(`https://formspree.io/f/${siteConfig.formspreeId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       })
+      clearTimeout(timeoutId)
       if (response.ok) {
         setStatus('success')
         setFormData({ name: '', email: '', phone: '', message: '' })
@@ -103,6 +107,7 @@ export default function Contact() {
         setStatus('error')
       }
     } catch {
+      clearTimeout(timeoutId)
       setStatus('error')
     }
   }
@@ -191,8 +196,8 @@ export default function Contact() {
             <div className="border rounded-lg p-6" style={{ backgroundColor: '#EDE8DC', borderColor: '#D4CCBC' }}>
               <h3 className="font-semibold text-base mb-5" style={{ color: siteConfig.colors.text }}>¿Qué incluye?</h3>
               <ul className="space-y-3">
-                {siteConfig.events.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm" style={{ color: siteConfig.colors.textLight }}>
+                {siteConfig.events.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3 text-sm" style={{ color: siteConfig.colors.textLight }}>
                     <FaCheckCircle
                       className="text-base mt-0.5 shrink-0"
                       style={{ color: siteConfig.colors.secondary }}
