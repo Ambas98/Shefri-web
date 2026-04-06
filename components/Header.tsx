@@ -31,6 +31,12 @@ export default function Header() {
 
   const isActive = (href: string) => pathname === href
 
+  // Blanco solo en el hero (home sin scroll). En otras páginas, siempre colores oscuros.
+  const isHeroTransparent = pathname === '/' && !isScrolled
+  const navTextColor = isHeroTransparent ? 'rgba(255,255,255,0.88)' : siteConfig.colors.textLight
+  const navTextHover = isHeroTransparent ? '#ffffff'                 : siteConfig.colors.text
+  const navIconColor = isHeroTransparent ? '#ffffff'                 : siteConfig.colors.text
+
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -51,7 +57,6 @@ export default function Header() {
               height={105}
               priority
               sizes="90px"
-              style={{ mixBlendMode: 'screen' }}
             />
           </Link>
 
@@ -63,14 +68,14 @@ export default function Header() {
                   href={item.href}
                   className="relative py-1 text-sm font-medium transition-colors"
                   style={{
-                    color: isActive(item.href) ? siteConfig.colors.primary : siteConfig.colors.textLight,
+                    color: isActive(item.href) ? siteConfig.colors.primary : navTextColor,
                   }}
                   aria-current={isActive(item.href) ? 'page' : undefined}
                   onMouseEnter={(e) => {
-                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = siteConfig.colors.text
+                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = navTextHover
                   }}
                   onMouseLeave={(e) => {
-                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = siteConfig.colors.textLight
+                    if (!isActive(item.href)) (e.currentTarget as HTMLElement).style.color = navTextColor
                   }}
                 >
                   {item.label}
@@ -94,9 +99,9 @@ export default function Header() {
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
-              <FaTimes className="text-xl" style={{ color: siteConfig.colors.text } as React.CSSProperties} />
+              <FaTimes className="text-xl" style={{ color: navIconColor } as React.CSSProperties} />
             ) : (
-              <FaBars className="text-xl" style={{ color: siteConfig.colors.text } as React.CSSProperties} />
+              <FaBars className="text-xl" style={{ color: navIconColor } as React.CSSProperties} />
             )}
           </button>
         </div>

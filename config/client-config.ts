@@ -193,7 +193,7 @@ export const siteConfig = {
   // ==========================================
   events: {
     title: "Shefri para tus Eventos",
-    description: "Imaginate el olor a masa recién horneada en tu propio evento. Llevamos todo: el horno, el gazebo y las manos que hacen la magia. A 400°, tus invitados ven cómo se prepara cada pizza y la reciben lista en minutos. No es catering — es una experiencia napolitana en vivo.",
+    description: "Convierta su evento en un momento inolvidable llevando a sus invitados a un viaje gastronómico directo al corazón de Italia.\n\nNuestro catering ofrece la auténtica experiencia napoletana: masas fermentadas lentamente durante más de 48 horas, materia prima e ingredientes de primerísima calidad y horneado en vivo en nuestros hornos profesionales a más de 400 °C, tal como se hace en las calles de Nápoles. Cada pizza es una obra efímera, creada al instante por nuestros pizzaiolos, fusionando espectáculo, aroma y sabor.",
     features: [
       "Hornos portátiles a 400° — pizzas listas en 5 minutos",
       "Gazebo propio, instalamos en cualquier espacio",

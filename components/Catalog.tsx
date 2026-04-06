@@ -141,8 +141,7 @@ export default function Catalog() {
                 <div
                   key={cat.category}
                   ref={(el) => { if (el) categoryRefs.current.set(cat.category, el) }}
-                  onMouseEnter={() => setOpenCategory(cat.category)}
-                  onMouseLeave={() => setOpenCategory(null)}
+
                 >
                   {/* Category header */}
                   <button
