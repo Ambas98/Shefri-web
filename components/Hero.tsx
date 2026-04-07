@@ -10,7 +10,7 @@ const OVEN_IMAGE = '/imagen-horno/WhatsApp Image 2026-03-26 at 14.17.06.jpeg'
 
 export default function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-screen overflow-hidden bg-black">
 
       {/* Imagen del horno */}
       <Image
@@ -19,22 +19,26 @@ export default function Hero() {
         fill
         priority
         className="object-cover"
-        // Mobile portrait: imagen llena la altura, sin overflow vertical → objectPosition Y no afecta.
-        // La boca del horno cae naturalmente al ~63% del viewport.
-        // Desktop landscape: imagen más alta que el viewport → 72% trae la boca hacia el centro.
         style={{ objectPosition: 'center 72%' }}
         sizes="100vw"
       />
 
-      {/* Overlay vertical: oscuro arriba y abajo, suave en el centro */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/15 to-black/75" />
+      {/* Overlay vertical: negro puro arriba (oculta caño), suave en centro, oscuro abajo.
+          Aplica en mobile y desktop. */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.88) 12%, rgba(0,0,0,0.25) 28%, rgba(0,0,0,0.05) 44%, rgba(0,0,0,0.05) 56%, rgba(0,0,0,0.45) 72%, rgba(0,0,0,0.82) 88%, rgba(0,0,0,0.9) 100%)',
+        }}
+      />
 
-      {/* Overlay lateral (solo desktop): oscurece caños izq y plancha der, deja el horno visible */}
+      {/* Overlay lateral (solo desktop): negro puro en bordes → oculta caños izq y plancha der. */}
       <div
         className="hidden md:block absolute inset-0"
         style={{
           background:
-            'linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.35) 18%, transparent 30%, transparent 70%, rgba(0,0,0,0.35) 82%, rgba(0,0,0,0.88) 100%)',
+            'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 11%, rgba(0,0,0,0.45) 21%, transparent 30%, transparent 70%, rgba(0,0,0,0.45) 79%, rgba(0,0,0,0.92) 89%, rgba(0,0,0,1) 100%)',
         }}
       />
 
@@ -55,11 +59,11 @@ export default function Hero() {
         </p>
       </motion.div>
 
-      {/* ── SHEFRI ──
-          Mobile: la boca del horno cae al ~63% del viewport (sin overflow vertical).
-          Desktop: objectPosition 72% lleva la boca al ~38% del viewport. */}
+      {/* ── SHEFRI – boca del horno ──
+          Mobile: boca cae al ~57% del viewport (sin overflow vertical → objectPosition Y no opera).
+          Desktop: objectPosition 72% lleva la boca al ~33% del viewport. */}
       <motion.div
-        className="absolute inset-x-0 top-[63%] md:top-[38%] -translate-y-1/2 flex justify-center px-4 z-10"
+        className="absolute inset-x-0 top-[57%] md:top-[33%] -translate-y-1/2 flex justify-center px-4 z-10"
         initial={{ opacity: 0, scale: 0.88 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.9, delay: 0.45, ease: 'easeOut' }}
@@ -76,9 +80,7 @@ export default function Hero() {
         </h1>
       </motion.div>
 
-      {/* ── DESCRIPCIÓN + BOTONES + SCROLL ──
-          Mobile: más pegado al fondo y compacto para no solaparse con SHEFRI.
-          Desktop: sube más para mantener la proporción visual. */}
+      {/* ── DESCRIPCIÓN + BOTONES + SCROLL ── */}
       <motion.div
         className="absolute inset-x-0 bottom-4 md:bottom-[8rem] flex flex-col items-center gap-3 md:gap-5 px-4 text-center z-10"
         initial={{ opacity: 0, y: 24 }}
