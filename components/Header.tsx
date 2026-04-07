@@ -31,19 +31,30 @@ export default function Header() {
 
   const isActive = (href: string) => pathname === href
 
-  // Blanco solo en el hero (home sin scroll). En otras páginas, siempre colores oscuros.
-  const isHeroTransparent = pathname === '/' && !isScrolled
-  const navTextColor = isHeroTransparent ? 'rgba(255,255,255,0.88)' : siteConfig.colors.textLight
-  const navTextHover = isHeroTransparent ? '#ffffff'                 : siteConfig.colors.text
-  const navIconColor = isHeroTransparent ? '#ffffff'                 : siteConfig.colors.text
+  const isHomePage = pathname === '/'
+
+  // En home: siempre texto blanco (fondo oscuro transparente al hacer scroll).
+  // En otras páginas: texto oscuro siempre; fondo crema al hacer scroll.
+  const navTextColor = isHomePage ? 'rgba(255,255,255,0.88)' : (isScrolled ? siteConfig.colors.textLight : siteConfig.colors.textLight)
+  const navTextHover = isHomePage ? '#ffffff'                 : siteConfig.colors.text
+  const navIconColor = isHomePage ? '#ffffff'                 : siteConfig.colors.text
+
+  // Fondo del header:
+  // - Home: siempre transparente sin scroll / oscuro con blur al hacer scroll (nunca crema)
+  // - Otras páginas: crema con blur al hacer scroll
+  const headerBg    = isHomePage
+    ? (isScrolled ? 'rgba(0,0,0,0.65)' : 'transparent')
+    : (isScrolled ? `${siteConfig.colors.background}F2` : 'transparent')
+  const headerBlur  = isScrolled ? 'blur(8px)' : undefined
+  const headerShadow = isScrolled && !isHomePage ? '0 1px 20px rgba(0,0,0,0.08)' : undefined
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: isScrolled ? `${siteConfig.colors.background}F2` : 'transparent',
-        backdropFilter: isScrolled ? 'blur(8px)' : undefined,
-        boxShadow: isScrolled ? '0 1px 20px rgba(0,0,0,0.08)' : undefined,
+        backgroundColor: headerBg,
+        backdropFilter: headerBlur,
+        boxShadow: headerShadow,
       }}
     >
       <nav className="container mx-auto px-4 py-4" aria-label="Navegación principal">
