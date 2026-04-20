@@ -2,9 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Poppins, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import { siteConfig } from '@/config/client-config'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
 import { SchemaOrg } from '@/components/SchemaOrg'
 
 const poppins = Poppins({
@@ -75,15 +72,7 @@ export default function RootLayout({
         <SchemaOrg />
       </head>
       <body className="font-poppins">
-        <a href="#main-content" className="skip-to-content">
-          Saltar al contenido
-        </a>
-        <Header />
-        <div id="main-content">
-          {children}
-        </div>
-        <Footer />
-        <WhatsAppButton />
+        {children}
       </body>
     </html>
   )
