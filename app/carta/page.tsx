@@ -2,6 +2,10 @@
 
 import { siteConfig } from '@/config/client-config'
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://shefri.com'
+const PDF_PATH = '/carta/carta_ene-feb.pdf'
+const googleViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(SITE_URL + PDF_PATH)}&embedded=true`
+
 export default function CartaPage() {
   return (
     <main className="min-h-screen flex flex-col items-center" style={{ backgroundColor: siteConfig.colors.background }}>
@@ -16,23 +20,23 @@ export default function CartaPage() {
           </p>
         </div>
 
-        {/* PDF viewer — ocupa toda la pantalla en mobile */}
-        <div className="w-full rounded-xl overflow-hidden shadow-lg" style={{ height: '80vh' }}>
+        <div className="w-full rounded-xl overflow-hidden shadow-lg" style={{ height: '82vh' }}>
           <iframe
-            src="/carta/carta_ene-feb.pdf"
+            src={googleViewerUrl}
             className="w-full h-full"
             title="Carta Shefri"
+            allow="autoplay"
           />
         </div>
 
         <a
-          href="/carta/carta_ene-feb.pdf"
+          href={SITE_URL + PDF_PATH}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm shadow-md transition-opacity hover:opacity-90"
           style={{ backgroundColor: siteConfig.colors.primary }}
         >
-          Abrir carta completa
+          Descargar carta
         </a>
 
       </div>
