@@ -127,8 +127,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#1a1a1a] pt-8 text-center text-[#7a7a7a] text-sm">
+        <div className="border-t border-[#1a1a1a] pt-8 text-center text-[#7a7a7a] text-sm space-y-1">
           <p>© {currentYear} {siteConfig.businessName}. Todos los derechos reservados.</p>
+          <p className="text-xs text-[#4a4a4a]">
+            Desarrollado por{' '}
+            <a
+              href="https://mi-portfolio-seven-sigma.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#7a7a7a] transition-colors"
+            >
+              Nicolás Ambas
+            </a>
+          </p>
         </div>
       </div>
     </footer>

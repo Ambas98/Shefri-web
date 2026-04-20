@@ -71,9 +71,8 @@ export default function Hero() {
         <h1
           className="font-cormorant text-7xl sm:text-8xl md:text-9xl font-bold tracking-[0.15em] uppercase select-none"
           style={{
-            color: '#FFBA55',
-            textShadow:
-              '0 0 10px #FF9900, 0 0 25px #FF6600, 0 0 55px #FF3300, 0 0 90px #CC1100, 0 2px 6px rgba(0,0,0,0.6)',
+            color: '#FFFFFF',
+            textShadow: '0 2px 8px rgba(0,0,0,0.5)',
           }}
         >
           {siteConfig.businessName}
