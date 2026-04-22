@@ -79,61 +79,91 @@ export const siteConfig = {
     {
       category: "Pizzas",
       items: [
-        { name: "Margarita", price: "13000", description: "Salsa pomodoro, mozzarella y hojas de albahaca fresca. 8 porc. $13.000 | 4 porc. $8.000", image: "Margarita-1.webp" },
-        { name: "Triple Fugaza", price: "14000", description: "Salsa pomodoro, mozzarella, cebolla blanca, morada y de verdeo. 8 porc. $14.000 | 4 porc. $9.000", image: "fugazza-1.webp" },
-        { name: "Roquefort", price: "16000", description: "Salsa pomodoro, mozzarella y roquefort. Opcional: Nuez. 8 porc. $16.000 | 4 porc. $10.000", image: "roquefort-1.webp" },
-        { name: "Americana", price: "18000", description: "Salsa pomodoro, mozzarella, panceta ahumada y huevos fritos. 8 porc. $18.000 | 4 porc. $10.500", image: "americana-1.webp" },
-        { name: "Napolitana", price: "15000", description: "Salsa pomodoro, mozzarella, tomates cherry confitados y pesto de albahaca y nueces. 8 porc. $15.000 | 4 porc. $10.000", image: "napolitana.webp" },
-        { name: "Peperoni", price: "18000", description: "Salsa pomodoro, mozzarella, peperoni y reggianito. 8 porc. $18.000 | 4 porc. $10.000", image: "peperoni-1.webp" },
-        { name: "Cuatro Quesos", price: "15000", description: "Salsa pomodoro, mozzarella, provolone, roquefort y reggianito. 8 porc. $15.000 | 4 porc. $10.000", image: "4quesos-1.webp" },
-        { name: "Súper Provolone", price: "16000", description: "Salsa pomodoro, mozzarella y extra provolone. 8 porc. $16.000 | 4 porc. $10.500", image: "provolone-1.webp" },
+        { name: "Margarita", price: "15000", description: "Salsa pomodoro, mozzarella y hojas de albahaca fresca. 8 porc. $15.000 | 4 porc. $8.000", image: "Margarita-1.webp" },
+        { name: "Triple Fugaza", price: "16000", description: "Salsa pomodoro, mozzarella, cebolla blanca, morada y de verdeo. 8 porc. $16.000 | 4 porc. $9.000", image: "fugazza-1.webp" },
+        { name: "Roquefort", price: "18000", description: "Salsa pomodoro, mozzarella y roquefort. Opcional: Nuez. 8 porc. $18.000 | 4 porc. $10.500", image: "roquefort-1.webp" },
+        { name: "Americana", price: "20000", description: "Salsa pomodoro, mozzarella, panceta ahumada y huevos fritos. 8 porc. $20.000 | 4 porc. $11.000", image: "americana-1.webp" },
+        { name: "Napolitana", price: "17000", description: "Salsa pomodoro, mozzarella, tomates cherry confitados y pesto de albahaca y nueces. 8 porc. $17.000 | 4 porc. $10.000", image: "napolitana.webp" },
+        { name: "Nuova Napolitana", price: "17000", description: "Mozzarella, tomates cherry y pesto de albahaca y nueces. 8 porc. $17.000 | 4 porc. $10.000", image: "nueva_napo.webp" },
+        { name: "Peperoni", price: "19000", description: "Salsa pomodoro, mozzarella, peperoni y reggianito. 8 porc. $19.000 | 4 porc. $11.000", image: "peperoni-1.webp" },
+        { name: "Cuatro Quesos", price: "18000", description: "Salsa pomodoro, mozzarella, provolone, roquefort y reggianito. 8 porc. $18.000 | 4 porc. $10.500", image: "4quesos-1.webp" },
+        { name: "Quattro Formaggi", price: "19000", description: "Crema de leche, albahaca fresca, mozzarella, provolone, sardo y roquefort. 8 porc. $19.000 | 4 porc. $11.000", image: "4_formaggi.webp" },
+        { name: "Súper Provolone", price: "18000", description: "Salsa pomodoro, mozzarella y extra provolone. 8 porc. $18.000 | 4 porc. $10.500", image: "provolone-1.webp" },
         { name: "Serrana", price: "23000", description: "Salsa pomodoro, mozzarella, jamón crudo, rúcula y reggianito. 8 porc. $23.000 | 4 porc. $14.000", image: "serrana-1.webp" },
-        { name: "Rústica", price: "19500", description: "Crema de leche, mozzarella, panceta crocante, rodajas de papa al romero con ají molido y reggianito. 8 porc. $19.500 | 4 porc. $11.500", image: "rustica.webp" },
-        { name: "Pistachela", price: "20500", description: "Base de pesto de albahaca y nuez, mozzarella, pistachos y mortadela bologna. 8 porc. $20.500 | 4 porc. $12.500", image: "pistachella-2.webp" },
-        { name: "Especial", price: "16000", description: "Salsa pomodoro, mozzarella, jamón cocido y morrón. 8 porc. $16.000 | 4 porc. $9.000", image: "especial-1.webp" }
+        { name: "Especial", price: "18000", description: "Salsa pomodoro, mozzarella, jamón cocido y morrón. 8 porc. $18.000 | 4 porc. $10.000", image: "especial-1.webp" },
+        { name: "Pistachela", price: "21000", description: "Base de pesto de albahaca y nuez, mozzarella, pistachos y mortadela bologna. 8 porc. $21.000 | 4 porc. $12.500", image: "pistachella-2.webp" }
       ]
     },
     {
-      category: "Nuevas Variedades",
+      category: "+ Variedades",
       items: [
-        { name: "Argenta", price: "17500", description: "Salsa pomodoro, mozzarella, chorizo, pimientos asados y aceitunas. 8 porc. $17.500 | 4 porc. $10.000", image: "argenta.webp" },
-        { name: "Roqueberry", price: "19000", description: "Crema de leche, mozzarella, roquefort y arándanos. 8 porc. $19.000 | 4 porc. $11.500", image: "roqueberry.webp" },
-        { name: "Quattro Formaggi", price: "17000", description: "Crema de leche, albahaca fresca, mozzarella, provolone, sardo y roquefort. 8 porc. $17.000 | 4 porc. $11.000", image: "4_formaggi.webp" },
-        { name: "Nuova Napolitana", price: "15000", description: "Pesto de albahaca y nueces, mozzarella y tomates cherry confitados. 8 porc. $15.000 | 4 porc. $10.000", image: "nueva_napo.webp" }
+        { name: "Roqueberry", price: "19000", description: "Mozzarella, roquefort, aceite de oliva y arándanos. 8 porc. $19.000 | 4 porc. $11.500", image: "roqueberry.webp" },
+        { name: "Diegote", price: "18000", description: "Crema de leche, mozzarella, roquefort, panceta y cebolla de verdeo. 8 porc. $18.000 | 4 porc. $10.000" },
+        { name: "Porky", price: "18000", description: "Salsa pomodoro, mozzarella, bondiola desmechada, lactonesa y cebolla de verdeo. 8 porc. $18.000 | 4 porc. $10.500" },
+        { name: "Especial Fugazza", price: "19000", description: "Mozzarella, jamón cocido, cebolla blanca, morada y de verdeo + sardo gratinado. 8 porc. $19.000 | 4 porc. $11.000" }
       ]
     },
     {
       category: "Pizza Dogs",
       items: [
-        { name: "Criolla", price: "12000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, salsa criolla, mayo de ajo y aceite de oliva. Envuelta en masa de pizza.", image: "criollo.webp" },
-        { name: "Margarita", price: "12000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, reggianito, pesto de albahaca y nueces, albahaca fresca y aceite de oliva. Envuelta en masa de pizza.", image: "panchito_margarita.webp" },
-        { name: "Cheddar", price: "13000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, cheddar, panceta crocante y verdeo. Envuelta en masa de pizza.", image: "cheddar_rotated.webp" },
-        { name: "Guacamole", price: "13000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella y palta. Envuelta en masa de pizza.", image: "pancho_guacamole.webp" }
-      ]
-    },
-    {
-      category: "Calzones",
-      items: [
-        { name: "Calzón Napolitano", price: "11000", description: "Muzarella, jamón cocido, morrones y albahaca fresca.", image: "calzon-napolitano-1.webp" },
-        { name: "Calzón Fugazza", price: "13000", description: "Muzarella, jamón cocido, provolone, cebolla blanca, morada y de verdeo.", image: "calzon_fugaza.webp" }
+        { name: "Criolla", price: "12000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, salsa criolla, mayo de ajo y aceite de oliva. Sobre masa de pizza.", image: "criollo.webp" },
+        { name: "Margarita", price: "12000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, reggianito, pesto de albahaca y nueces, albahaca fresca y aceite de oliva. Sobre masa de pizza.", image: "panchito_margarita.webp" },
+        { name: "Cheddar", price: "13000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, cheddar, panceta crocante y verdeo. Sobre masa de pizza.", image: "cheddar_rotated.webp" },
+        { name: "Guacamole", price: "13000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella y guacamole. Sobre masa de pizza.", image: "pancho_guacamole.webp" },
+        { name: "Poncho Pay", price: "12000", description: "Salchicha ahumada alemana de 20cm, salsa pomodoro, mozzarella, jamón cocido, papas pay, sardo gratinado y lactonesa de ajo. Sobre masa de pizza." }
       ]
     },
     {
       category: "Panuozzos",
       items: [
-        { name: "Pulled Pork Clásico", price: "16000", description: "Base de masa de pizza napolitana + bondiola desmechada, mozzarella, tomate, lechuga, cebolla morada y lactonesa de ajo.", image: "pork_clasico.webp" },
-        { name: "Pulled Pork Coleslaw", price: "16000", description: "Base de masa de pizza napolitana + bondiola desmechada, mozzarella y ensalada coleslaw.", image: "pork_coleslaw.webp" },
-        { name: "Pulled Pork Honey", price: "16000", description: "Base de masa de pizza napolitana + bondiola desmechada, mozzarella, sardo, mostaza y miel.", image: "pork_honey.webp" }
+        { name: "Pulled Pork Clásico", price: "17000", description: "Base de masa de pizza napolitana + bondiola desmechada, mozzarella, tomate, lechuga, cebolla morada y lactonesa de ajo.", image: "pork_clasico.webp" },
+        { name: "Pulled Pork Coleslaw", price: "17000", description: "Base de masa de pizza napolitana + bondiola desmechada, mozzarella y ensalada coleslaw.", image: "pork_coleslaw.webp" },
+        { name: "Pulled Pork Honey", price: "17000", description: "Base de masa de pizza napolitana + bondiola desmechada, mozzarella, sardo, mostaza y miel.", image: "pork_honey.webp" },
+        { name: "Punta de Espalda · Americano", price: "19000", description: "Base de masa de pizza napolitana + punta de espalda ahumada desmechada, mozzarella, huevo frito, bacon y lactonesa ahumada de ajo y morrón." },
+        { name: "Punta de Espalda · Avocado", price: "19000", description: "Base de masa de pizza napolitana + punta de espalda ahumada desmechada, palta, tomate y lactonesa de ajo." },
+        { name: "Punta de Espalda · Blue & Green", price: "19000", description: "Base de masa de pizza napolitana + punta de espalda ahumada desmechada, rúcula y roquefort." },
+        { name: "Veggie", price: "12000", description: "Base de masa de pizza napolitana + zucchini & berenjena grillada y lactonesa ahumada de ajo y morrón." }
+      ]
+    },
+    {
+      category: "Calzones",
+      items: [
+        { name: "Calzón Napolitano", price: "13000", description: "Mozzarella, jamón cocido, morrones y albahaca fresca.", image: "calzon-napolitano-1.webp" },
+        { name: "Calzón Fugazza", price: "13000", description: "Mozzarella, jamón cocido, provolone, cebolla blanca, morada y de verdeo.", image: "calzon_fugaza.webp" },
+        { name: "Calzón Pollo & Verdeo", price: "16000", description: "Mozzarella, pollo al verdeo y sardo gratinado." }
       ]
     },
     {
       category: "Bebidas",
       items: [
-        { name: "Gaseosas", price: "3000", description: "Botella 500cc." },
-        { name: "Agua saborizada", price: "3000", description: "Botella 500cc." },
+        { name: "CocaCola / Sprite", price: "3000", description: "Botella 500cc." },
+        { name: "Fanta / Schweppes", price: "3000", description: "Botella 500cc." },
+        { name: "Aquarius", price: "3000", description: "Botella 300cc." },
         { name: "Agua sin gas / con gas", price: "2000", description: "Botella 500cc." },
-        { name: "Cerveza", price: "4000", description: "Lata 500cc." },
-        { name: "Cerveza Donata", price: "5500", description: "IPA / PAMPEANA / IRISH / SCOTCH. Lata 500cc." }
+        { name: "Cerveza Stella Artois", price: "4500", description: "Lata 473cc." },
+        { name: "Cerveza Budweiser", price: "4000", description: "Lata 473cc." },
+        { name: "Cerveza Donata", price: "5500", description: "IPA / PAMPEANA / IRISH / SCOTCH. Lata 473cc." }
+      ]
+    },
+    {
+      category: "Promos",
+      items: [
+        { name: "Margarita + Especial", price: "27000", description: "Combo 2 pizzas." },
+        { name: "Margarita + Napolitana", price: "26000", description: "Combo 2 pizzas." },
+        { name: "Margarita + Fugazza", price: "25000", description: "Combo 2 pizzas." },
+        { name: "Margarita + Cuatro Quesos", price: "27000", description: "Combo 2 pizzas." },
+        { name: "Margarita + Americana", price: "30000", description: "Combo 2 pizzas." },
+        { name: "Margarita + Peperoni", price: "29000", description: "Combo 2 pizzas." },
+        { name: "Margarita + Serrana", price: "32500", description: "Combo 2 pizzas." },
+        { name: "Margarita + Quattro Formaggi", price: "29000", description: "Combo 2 pizzas." },
+        { name: "Pizza Dog + Gaseosa", price: "14000", description: "Cualquier pizza dog + gaseosa 500cc." },
+        { name: "Pizza Dog + Cerveza", price: "15000", description: "Cualquier pizza dog + cerveza 473cc." },
+        { name: "Pulled Pork + Gaseosa", price: "19000", description: "Cualquier Pulled Pork + gaseosa 500cc." },
+        { name: "Pulled Pork + Cerveza", price: "20000", description: "Cualquier Pulled Pork + cerveza 473cc." },
+        { name: "Punta de Espalda + Gaseosa", price: "21000", description: "Cualquier Punta de Espalda + gaseosa 500cc." },
+        { name: "Punta de Espalda + Cerveza", price: "22000", description: "Cualquier Punta de Espalda + cerveza 473cc." },
+        { name: "Calzone + Gaseosa", price: "15000", description: "Calzón Fugazza o Napolitano + gaseosa 500cc." },
+        { name: "Calzone + Cerveza", price: "16000", description: "Calzón Fugazza o Napolitano + cerveza 473cc." }
       ]
     }
   ],

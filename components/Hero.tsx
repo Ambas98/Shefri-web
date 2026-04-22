@@ -63,7 +63,7 @@ export default function Hero() {
           Mobile: boca cae al ~57% del viewport (sin overflow vertical → objectPosition Y no opera).
           Desktop: objectPosition 72% lleva la boca al ~33% del viewport. */}
       <motion.div
-        className="absolute inset-x-0 top-[60%] md:top-[38%] -translate-y-1/2 flex justify-center px-4 z-10"
+        className="absolute inset-x-0 top-[60%] md:top-[33%] 2xl:top-[38%] -translate-y-1/2 flex justify-center px-4 z-10"
         initial={{ opacity: 0, scale: 0.88 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.9, delay: 0.45, ease: 'easeOut' }}
@@ -81,7 +81,7 @@ export default function Hero() {
 
       {/* ── DESCRIPCIÓN + BOTONES + SCROLL ── */}
       <motion.div
-        className="absolute inset-x-0 bottom-4 md:bottom-[8rem] flex flex-col items-center gap-3 md:gap-5 px-4 text-center z-10"
+        className="absolute inset-x-0 bottom-4 md:bottom-[5rem] 2xl:bottom-[8rem] flex flex-col items-center gap-3 md:gap-5 px-4 text-center z-10"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.65, delay: 0.7 }}
